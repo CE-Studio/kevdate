@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 
 
-var states: Dictionary[StringName, state]
+var states: Dictionary[StringName, State]
 var state_machine: StateMachine
 func _ready() -> void:
 	
