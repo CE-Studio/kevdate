@@ -1,6 +1,29 @@
-[gd_scene load_steps=20 format=3 uid="uid://bslylgkd23ct8"]
+[gd_scene load_steps=21 format=3 uid="uid://bslylgkd23ct8"]
 
 [ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="1_3dr4n"]
+
+[sub_resource type="GDScript" id="GDScript_3dr4n"]
+script/source = "extends Node3D
+
+
+@export var res:Vector2i
+
+
+func _ready() -> void:
+	_eck()
+
+
+func _eck() -> void:
+	get_window().size = res
+	var t := get_tree()
+	var vp := get_viewport()
+	for i in $AnimationPlayer.get_animation_list():
+		$AnimationPlayer.play(i)
+		await t.create_timer(0.5).timeout
+		await RenderingServer.frame_post_draw
+		vp.get_texture().get_image().save_png(\"res://artassets/autoxp/\" + i + \".png\")
+	t.quit()
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3dr4n"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -489,6 +512,8 @@ _data = {
 }
 
 [node name="Kevpose" type="Node3D"]
+script = SubResource("GDScript_3dr4n")
+res = Vector2i(115, 90)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -542,7 +567,6 @@ mesh = SubResource("PlaneMesh_og4jd")
 libraries = {
 &"": SubResource("AnimationLibrary_fvi18")
 }
-autoplay = "p1"
 
 [editable path="Player"]
 [editable path="Player/player"]
