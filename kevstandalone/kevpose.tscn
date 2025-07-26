@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bslylgkd23ct8"]
+[gd_scene load_steps=24 format=3 uid="uid://bslylgkd23ct8"]
 
 [ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="1_3dr4n"]
 
@@ -42,11 +42,10 @@ ambient_light_energy = 0.3
 tonemap_mode = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3dr4n"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("Player/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uubrl"]
 resource_local_to_scene = true
-shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_3dr4n")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rb68l"]
@@ -122,7 +121,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-444.011, 133.67)
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(860, 60)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_rb68l")
@@ -692,6 +690,12 @@ _data = {
 &"p2": SubResource("Animation_3dr4n")
 }
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_an0tr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08tob"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3dr4n")
+
 [node name="Kevpose" type="Node3D"]
 script = SubResource("GDScript_3dr4n")
 res = Vector2i(115, 90)
@@ -747,7 +751,7 @@ bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 surface_material_override/0 = SubResource("StandardMaterial3D_uubrl")
 
 [node name="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998467, 0.0245325, -0.0496219, -0.0496369, 9.31323e-10, 0.998767, 0.843557, 1.63555, 0.0128214)
+transform = Transform3D(0.0245019, 0.999699, 0.00121774, -0.998467, 0.0245322, -0.049622, -0.0496369, -3.60887e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
 
 [node name="MeshInstance3D" parent="Player" index="5"]
 visible = false
@@ -765,6 +769,11 @@ mesh = SubResource("PlaneMesh_og4jd")
 libraries = {
 &"": SubResource("AnimationLibrary_fvi18")
 }
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73061, 0, 0)
+mesh = SubResource("CapsuleMesh_an0tr")
+surface_material_override/0 = SubResource("StandardMaterial3D_08tob")
 
 [editable path="Player"]
 [editable path="Player/player"]
