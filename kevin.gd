@@ -9,9 +9,13 @@ const FRICTION := 0.2          # How quickly player decelerates on ground
 const JUMP_VELOCITY := -2000.0   # Initial upward velocity for jump
 const JUMP_GRAVITY_MULTIPLIER := 0.5 # Less gravity during ascending jump (for variable jump height)
 
-const AIR_ACCELERATION := 0.1  # How quickly player accelerates in air
+const AIR_ACCELERATION := 0.05  # How quickly player accelerates in air
 const AIR_FRICTION := 0.1      # How quickly player decelerates in air
-const MAX_AIR_SPEED := 1500.0   # Max horizontal speed in air
+const MAX_AIR_SPEED := 2500.0   # Max horizontal speed in air
+
+const OVERSPEED_FRICTION_MULTIPLIER := 0.05
+const OVERSPEED_ACCELERATION_MULTIPLIER := 0.5
+
 #endregion
 
 var states: Dictionary[StringName, State]
@@ -31,6 +35,7 @@ func _process(delta: float) -> void:
 	state_machine.tick(delta)
 
 func _physics_process(delta: float) -> void:
+	print(velocity.x)
 	state_machine.physics_tick(delta)
 
 
@@ -41,20 +46,27 @@ class PlayerState extends State:
 	func _init(character: Player) -> void:
 		player = character
 
-	func _common_horizontal_movement(delta: float, current_speed: float, acceleration_factor: float, friction_factor: float) -> void:
+	func _common_horizontal_movement(delta: float, current_speed_cap: float, base_acceleration_factor: float, base_friction_factor: float) -> void:
 		var dir = Input.get_axis("Left", "Right")
+		var current_abs_speed = abs(player.velocity.x)
+
+		var dynamic_friction_factor = base_friction_factor
+		var dynamic_acceleration_factor = base_acceleration_factor
+
+		if current_abs_speed > current_speed_cap:
+			var overspeed_amount = current_abs_speed - current_speed_cap
+			dynamic_friction_factor += player.OVERSPEED_FRICTION_MULTIPLIER * (overspeed_amount / current_speed_cap)
+			dynamic_acceleration_factor *= (1.0 - player.OVERSPEED_ACCELERATION_MULTIPLIER * (overspeed_amount / current_speed_cap))
+			dynamic_acceleration_factor = max(0.0, dynamic_acceleration_factor)
 
 		if dir == 0:
-			#friction
-			player.velocity.x = lerp(player.velocity.x, 0.0, friction_factor)
+			player.velocity.x = lerp(player.velocity.x, 0.0, dynamic_friction_factor)
 		else:
-			#acceleration
-			var target_speed = dir * current_speed
-			player.velocity.x = lerp(player.velocity.x, target_speed, acceleration_factor)
+			var target_speed = dir * current_speed_cap
+			player.velocity.x = lerp(player.velocity.x, target_speed, dynamic_acceleration_factor)
 			
-			# Clamp velocity
-			if abs(player.velocity.x) > current_speed:
-				player.velocity.x = sign(player.velocity.x) * current_speed
+			if sign(player.velocity.x) != dir and current_abs_speed > current_speed_cap * 0.5:
+				player.velocity.x = lerp(player.velocity.x, 0.0, base_friction_factor * 2.0)
 
 	func _apply_gravity(delta: float) -> void:
 		player.velocity += player.get_gravity()
