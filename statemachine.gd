@@ -6,6 +6,7 @@ var current_state: State
 
 func _init(states: Dictionary[StringName, State], initial_state: StringName) -> void:
 	self.states = states
+	
 	current_state = self.states.get(initial_state, State)
 	current_state.enter()
 	

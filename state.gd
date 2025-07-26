@@ -1,4 +1,8 @@
 class_name State
+var object: Object
+func _init(thing: Object) -> void:
+	object = thing
+	
 
 func enter() -> void:
 	pass
