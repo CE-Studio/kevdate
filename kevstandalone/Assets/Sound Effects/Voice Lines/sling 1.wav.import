@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b11nw6c415u18"
+path="res://.godot/imported/sling 1.wav-20399a8803e5677fd6da94368e23257c.sample"
+
+[deps]
+
+source_file="res://kevstandalone/Assets/Sound Effects/Voice Lines/sling 1.wav"
+dest_files=["res://.godot/imported/sling 1.wav-20399a8803e5677fd6da94368e23257c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

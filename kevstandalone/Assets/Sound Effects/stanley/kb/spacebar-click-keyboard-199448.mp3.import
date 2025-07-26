@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bretsowqfvd3p"
+path="res://.godot/imported/spacebar-click-keyboard-199448.mp3-5027947420b4ed2fee50ef1fbd622da5.mp3str"
+
+[deps]
+
+source_file="res://kevstandalone/Assets/Sound Effects/stanley/kb/spacebar-click-keyboard-199448.mp3"
+dest_files=["res://.godot/imported/spacebar-click-keyboard-199448.mp3-5027947420b4ed2fee50ef1fbd622da5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

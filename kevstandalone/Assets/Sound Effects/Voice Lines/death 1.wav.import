@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3b2vqh8acbfe"
+path="res://.godot/imported/death 1.wav-cce85be1b4eea0bc78288b453f5bc1ff.sample"
+
+[deps]
+
+source_file="res://kevstandalone/Assets/Sound Effects/Voice Lines/death 1.wav"
+dest_files=["res://.godot/imported/death 1.wav-cce85be1b4eea0bc78288b453f5bc1ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ya6ceh1dqj74"
+path="res://.godot/imported/platform 2.wav-179685e7bef1820720d975f450f4ffc8.sample"
+
+[deps]
+
+source_file="res://kevstandalone/Assets/Sound Effects/Voice Lines/platform 2.wav"
+dest_files=["res://.godot/imported/platform 2.wav-179685e7bef1820720d975f450f4ffc8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
