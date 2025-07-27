@@ -7,6 +7,7 @@ script/source = "extends Node3D
 
 
 @export var res:Vector2i
+@export var xp := true
 
 
 func _ready() -> void:
@@ -21,7 +22,8 @@ func _eck() -> void:
 		$AnimationPlayer.play(i)
 		await $AnimationPlayer.animation_finished
 		await RenderingServer.frame_post_draw
-		vp.get_texture().get_image().save_png(\"res://artassets/autoxp/\" + i + \".png\")
+		if xp:
+			vp.get_texture().get_image().save_png(\"res://artassets/autoxp/\" + i + \".png\")
 	t.quit()
 "
 
@@ -2891,7 +2893,7 @@ bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 surface_material_override/0 = SubResource("StandardMaterial3D_uubrl")
 
 [node name="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.330622, -0.28598, 0.899391, -0.943648, 0.1151, -0.310292, -0.0147826, -0.951298, -0.307918, 0.480289, 0.00695921, -2.23329)
+transform = Transform3D(0.0245019, 0.999699, 0.00121774, -0.998467, 0.0245322, -0.049622, -0.0496369, -3.60887e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
 
 [node name="MeshInstance3D" parent="Player" index="5"]
 visible = false
