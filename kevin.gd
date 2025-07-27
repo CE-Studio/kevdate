@@ -20,6 +20,15 @@ const OVERSPEED_ACCELERATION_MULTIPLIER := 0.5
 
 var states: Dictionary[StringName, State]
 var state_machine: StateMachine
+static var alive := true
+
+
+@onready var body:Sprite2D = $body
+
+
+func is_not_moving() -> bool:
+	return is_equal_approx(velocity.x / 1000000.0, 0)
+
 
 func _ready() -> void:
 	_state_setup()
@@ -33,10 +42,12 @@ func _state_setup() -> void:
 
 func _process(delta: float) -> void:
 	state_machine.tick(delta)
+	
 
 func _physics_process(delta: float) -> void:
-	print(velocity.x)
 	state_machine.physics_tick(delta)
+	if not is_not_moving():
+		body.flip_h = (velocity.x < 0)
 
 
 

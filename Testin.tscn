@@ -10,8 +10,6 @@
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
-[node name="Kevin" parent="." instance=ExtResource("1_0otwi")]
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 128)
 
@@ -21,3 +19,6 @@ shape = SubResource("WorldBoundaryShape2D_0otwi")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(20, 1)
 texture = ExtResource("2_oj7yv")
+
+[node name="Kevin" parent="." instance=ExtResource("1_0otwi")]
+position = Vector2(61, -867)

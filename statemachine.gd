@@ -1,4 +1,5 @@
 class_name StateMachine
+extends RefCounted
 
 var states: Dictionary[StringName, State]
 var current_state: State

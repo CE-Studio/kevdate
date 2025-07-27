@@ -2876,7 +2876,7 @@ bones/22/rotation = Quaternion(0.0350315, -0.0884289, 0.988896, -0.114181)
 surface_material_override/0 = SubResource("StandardMaterial3D_uubrl")
 
 [node name="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, -6.98492e-10, 0.998767, 0.843557, 1.63555, 0.0128214)
+transform = Transform3D(-0.330622, -0.28598, 0.899391, -0.943648, 0.1151, -0.310292, -0.0147826, -0.951298, -0.307918, 0.480289, 0.00695921, -2.23329)
 
 [node name="MeshInstance3D" parent="Player" index="5"]
 visible = false
