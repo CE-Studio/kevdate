@@ -44,7 +44,7 @@ ambient_light_energy = 0.3
 tonemap_mode = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3dr4n"]
-viewport_path = NodePath("Player/SubViewport")
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uubrl"]
 resource_local_to_scene = true
@@ -2893,7 +2893,7 @@ bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 surface_material_override/0 = SubResource("StandardMaterial3D_uubrl")
 
 [node name="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245019, 0.999699, 0.00121774, -0.998467, 0.0245322, -0.049622, -0.0496369, -3.60887e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
+transform = Transform3D(0.0245018, 0.999699, 0.00121775, -0.998467, 0.0245321, -0.049622, -0.0496369, -3.93484e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
 
 [node name="MeshInstance3D" parent="Player" index="5"]
 visible = false

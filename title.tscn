@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://gwcrs6kxhqe5"]
+
+[ext_resource type="Script" uid="uid://cf1m2xxilca5w" path="res://scripts/scenebutton.gd" id="1_y7k74"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "testscn"
+script = ExtResource("1_y7k74")
+scn = "uid://crqpnxl7umhmk"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "shadetest"
+script = ExtResource("1_y7k74")
+scn = "uid://bubnqoclqwdwy"

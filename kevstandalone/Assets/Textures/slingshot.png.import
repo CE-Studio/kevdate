@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ru84i2wfoogw"
 path.s3tc="res://.godot/imported/slingshot.png-91590618a78d2edba6fa1a2f9993ea58.s3tc.ctex"
+path.etc2="res://.godot/imported/slingshot.png-91590618a78d2edba6fa1a2f9993ea58.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://kevstandalone/Assets/Textures/slingshot.png"
-dest_files=["res://.godot/imported/slingshot.png-91590618a78d2edba6fa1a2f9993ea58.s3tc.ctex"]
+dest_files=["res://.godot/imported/slingshot.png-91590618a78d2edba6fa1a2f9993ea58.s3tc.ctex", "res://.godot/imported/slingshot.png-91590618a78d2edba6fa1a2f9993ea58.etc2.ctex"]
 
 [params]
 

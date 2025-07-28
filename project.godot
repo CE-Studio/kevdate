@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kevdate"
-run/main_scene="uid://crqpnxl7umhmk"
+run/main_scene="uid://gwcrs6kxhqe5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

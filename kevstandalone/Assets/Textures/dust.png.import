@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdch1vlk7mbnf"
 path.s3tc="res://.godot/imported/dust.png-0c706083d7704f18781a9c34835307f8.s3tc.ctex"
+path.etc2="res://.godot/imported/dust.png-0c706083d7704f18781a9c34835307f8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://kevstandalone/Assets/Textures/dust.png"
-dest_files=["res://.godot/imported/dust.png-0c706083d7704f18781a9c34835307f8.s3tc.ctex"]
+dest_files=["res://.godot/imported/dust.png-0c706083d7704f18781a9c34835307f8.s3tc.ctex", "res://.godot/imported/dust.png-0c706083d7704f18781a9c34835307f8.etc2.ctex"]
 
 [params]
 

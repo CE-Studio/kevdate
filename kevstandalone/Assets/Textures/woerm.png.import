@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://doj2uf6rwb6vv"
 path.s3tc="res://.godot/imported/woerm.png-26c16f6e1f565802dca64c46b1e0f611.s3tc.ctex"
+path.etc2="res://.godot/imported/woerm.png-26c16f6e1f565802dca64c46b1e0f611.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://kevstandalone/Assets/Textures/woerm.png"
-dest_files=["res://.godot/imported/woerm.png-26c16f6e1f565802dca64c46b1e0f611.s3tc.ctex"]
+dest_files=["res://.godot/imported/woerm.png-26c16f6e1f565802dca64c46b1e0f611.s3tc.ctex", "res://.godot/imported/woerm.png-26c16f6e1f565802dca64c46b1e0f611.etc2.ctex"]
 
 [params]
 
