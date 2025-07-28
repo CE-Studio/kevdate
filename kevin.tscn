@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://uvcn65h66alb"]
+[gd_scene load_steps=27 format=3 uid="uid://uvcn65h66alb"]
 
 [ext_resource type="Script" uid="uid://dhnyjcyb3t8hd" path="res://kevin.gd" id="1_7vnhk"]
 [ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_7vnhk"]
@@ -169,6 +169,20 @@ states/run/position = Vector2(509, 110)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_60esd"), "RESET", "die", SubResource("AnimationNodeStateMachineTransition_2i5st"), "die", "RESET", SubResource("AnimationNodeStateMachineTransition_wctw4"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_hejao"), "idle", "RESET", SubResource("AnimationNodeStateMachineTransition_g74gu"), "RESET", "jump", SubResource("AnimationNodeStateMachineTransition_23cmr"), "jump", "RESET", SubResource("AnimationNodeStateMachineTransition_xjw1t"), "RESET", "run", SubResource("AnimationNodeStateMachineTransition_n6em6"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_o8de5")]
 graph_offset = Vector2(-77, -54)
 
+[sub_resource type="GDScript" id="GDScript_7vnhk"]
+script/source = "extends CanvasLayer
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch or event is InputEventScreenDrag:
+		show()
+	elif event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		hide()
+"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7vnhk"]
+size = Vector2(256, 256)
+
 [node name="Kevin" type="CharacterBody2D"]
 script = ExtResource("1_7vnhk")
 
@@ -201,3 +215,60 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_6dck4")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = SubResource("GDScript_7vnhk")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Control/Control"]
+position = Vector2(8, -224)
+texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+passby_press = true
+action = "Left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/Control/Control"]
+position = Vector2(280, -224)
+texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+passby_press = true
+action = "Right"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Control/Control2"]
+position = Vector2(-224, -224)
+texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+passby_press = true
+action = "Jump"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/Control/Control2"]
+position = Vector2(-496, -224)
+texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+passby_press = true
+action = "Dash"
