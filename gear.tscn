@@ -1,6 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwie4au2eojrg"]
+[gd_scene load_steps=24 format=3 uid="uid://cwie4au2eojrg"]
 
+[ext_resource type="Script" uid="uid://bgc01h0gpnese" path="res://scripts/gear.gd" id="1_jnell"]
 [ext_resource type="Texture2D" uid="uid://crqcar71h30vd" path="res://sprites/Gear.png" id="1_u3nac"]
+[ext_resource type="Texture2D" uid="uid://derne4gt31d71" path="res://sprites/GearParticle.png" id="2_y8ccp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3nac"]
 size = Vector2(160, 160)
@@ -198,7 +200,12 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_jnell"]
+offsets = PackedFloat32Array(0.786667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Gear" type="Node2D"]
+script = ExtResource("1_jnell")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -214,3 +221,20 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8jeyy")
 autoplay = "default"
 frame_progress = 0.529396
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 12
+texture = ExtResource("2_y8ccp")
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 101.01
+initial_velocity_max = 272.73
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_jnell")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_enter"]

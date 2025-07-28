@@ -1,7 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://uvcn65h66alb"]
+[gd_scene load_steps=36 format=3 uid="uid://uvcn65h66alb"]
 
 [ext_resource type="Script" uid="uid://dhnyjcyb3t8hd" path="res://kevin.gd" id="1_7vnhk"]
 [ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_7vnhk"]
+[ext_resource type="Script" uid="uid://brarpl4plirtq" path="res://scripts/camcontrol.gd" id="2_i71df"]
+[ext_resource type="Texture2D" uid="uid://caomoxwr7bkie" path="res://sprites/TouchButtons.png" id="3_ypijm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi4g3"]
 size = Vector2(20, 70)
@@ -180,8 +182,37 @@ func _input(event: InputEvent) -> void:
 		hide()
 "
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7vnhk"]
-size = Vector2(256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i71df"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1mg7"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5eeg"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60esd"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i5st"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wctw4"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hejao"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g74gu"]
+atlas = ExtResource("3_ypijm")
+region = Rect2(128, 64, 64, 64)
 
 [node name="Kevin" type="CharacterBody2D"]
 collision_layer = 2
@@ -195,6 +226,7 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_left_margin = 0.1
 drag_right_margin = 0.1
+script = ExtResource("2_i71df")
 
 [node name="body" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -240,14 +272,20 @@ offset_right = 40.0
 grow_vertical = 0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Control/Control"]
+texture_filter = 1
 position = Vector2(8, -224)
-texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_i71df")
+texture_pressed = SubResource("AtlasTexture_o1mg7")
 passby_press = true
 action = "Left"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/Control/Control"]
+texture_filter = 1
 position = Vector2(280, -224)
-texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_p5eeg")
+texture_pressed = SubResource("AtlasTexture_60esd")
 passby_press = true
 action = "Right"
 
@@ -264,13 +302,19 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Control/Control2"]
+texture_filter = 1
 position = Vector2(-224, -224)
-texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_2i5st")
+texture_pressed = SubResource("AtlasTexture_wctw4")
 passby_press = true
 action = "Jump"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/Control/Control2"]
+texture_filter = 1
 position = Vector2(-496, -224)
-texture_normal = SubResource("PlaceholderTexture2D_7vnhk")
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_hejao")
+texture_pressed = SubResource("AtlasTexture_g74gu")
 passby_press = true
 action = "Dash"

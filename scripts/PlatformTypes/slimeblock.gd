@@ -25,6 +25,8 @@ const SPR_SCALE_MULT:int = 24
 @onready var box:CollisionShape2D = $"CollisionShape2D"
 @onready var sprite:NinePatchRect = $"NinePatchRect"
 @onready var box_shape:RectangleShape2D = box.shape
+@onready var area:Area2D = $"Area2D"
+@onready var area_box:CollisionShape2D = $"Area2D/CollisionShape2D"
 #endregion
 
 
@@ -32,14 +34,13 @@ func _ready() -> void:
 	box.shape = RectangleShape2D.new()
 	box_shape = box.shape
 	box_shape.size = Vector2(width, height) * BOX_SCALE_MULT
+	area_box.shape = box_shape
 	width = width
 	height = height
 
 
-func _on_body_entered(body: Node) -> void:
-	print(body)
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print(body.velocity)
-		if body.state_machine.current_state == body.states["Fall"]:
-			body.velocity.y *= -1.25
+		if body.last_nonzero_vel.y > 0.0 and abs(body.position.x - position.x) < (box_shape.size.x * 0.5):
+			body.velocity.y = body.last_nonzero_vel.y * -1.25
 			body.state_machine.switch_state("Jump")

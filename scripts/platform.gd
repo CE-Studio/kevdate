@@ -1,2 +1,2 @@
 class_name Platform
-extends RigidBody2D
+extends AnimatableBody2D

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwknv4jpao8si"]
+
+[ext_resource type="Script" uid="uid://bae2qkswenugu" path="res://scripts/camtrigger.gd" id="1_c50ia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m58s"]
+size = Vector2(64, 64)
+
+[node name="CamTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c50ia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8m58s")
+debug_color = Color(0.515545, 0.762262, 0.407357, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]

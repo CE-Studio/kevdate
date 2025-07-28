@@ -21,9 +21,12 @@ const OVERSPEED_ACCELERATION_MULTIPLIER := 0.5
 var states: Dictionary[StringName, State]
 var state_machine: StateMachine
 static var alive := true
+var last_nonzero_vel:Vector2 = Vector2.ZERO
+var last_true_vel:Vector2 = Vector2.ZERO
 
 
 @onready var body:Sprite2D = $body
+@onready var cam:CamControl = $"Camera2D"
 
 
 func is_not_moving() -> bool:
@@ -45,6 +48,12 @@ func _process(delta: float) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	if velocity.x != 0.0:
+		last_nonzero_vel.x = velocity.x
+	if velocity.y != 0.0:
+		last_nonzero_vel.y = velocity.y
+	last_true_vel = velocity
+	
 	state_machine.physics_tick(delta)
 	if not is_not_moving():
 		body.flip_h = (velocity.x < 0)

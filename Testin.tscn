@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://crqpnxl7umhmk"]
+[gd_scene load_steps=8 format=4 uid="uid://crqpnxl7umhmk"]
 
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="1_0otwi"]
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_nro4c"]
 [ext_resource type="Texture2D" uid="uid://d2uhxy6ss4gn5" path="res://icon.svg" id="2_oj7yv"]
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="4_e6eo5"]
+[ext_resource type="PackedScene" uid="uid://cwie4au2eojrg" path="res://gear.tscn" id="5_mcwg8"]
+[ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="6_fpqvy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0otwi"]
 
@@ -37,3 +39,45 @@ position = Vector2(61, -867)
 [node name="Slime" parent="." instance=ExtResource("4_e6eo5")]
 position = Vector2(2496, -480)
 width = 4
+
+[node name="GearGroup" type="Node2D" parent="."]
+
+[node name="Gear" parent="GearGroup" instance=ExtResource("5_mcwg8")]
+position = Vector2(-1536, -1152)
+
+[node name="Gear2" parent="GearGroup" instance=ExtResource("5_mcwg8")]
+position = Vector2(-1280, -1152)
+
+[node name="Gear3" parent="GearGroup" instance=ExtResource("5_mcwg8")]
+position = Vector2(-1024, -1152)
+
+[node name="TriggerGroup" type="Node2D" parent="."]
+
+[node name="CamTrigger" parent="TriggerGroup" instance=ExtResource("6_fpqvy")]
+position = Vector2(264, -720)
+scale = Vector2(24.1873, 14.2375)
+set_zoom = true
+set_focus = true
+
+[node name="CamTrigger2" parent="TriggerGroup" instance=ExtResource("6_fpqvy")]
+position = Vector2(-672, -840)
+scale = Vector2(1.38874, 9.16597)
+set_zoom = true
+zoom = 0.375
+
+[node name="CamTrigger3" parent="TriggerGroup" instance=ExtResource("6_fpqvy")]
+position = Vector2(1224, -776)
+scale = Vector2(1.38874, 9.16597)
+set_zoom = true
+zoom = 0.375
+
+[node name="CamTrigger4" parent="TriggerGroup" instance=ExtResource("6_fpqvy")]
+position = Vector2(1600, -1144)
+scale = Vector2(1.48075, 19.8287)
+set_focus = true
+
+[node name="CamTrigger5" parent="TriggerGroup" instance=ExtResource("6_fpqvy")]
+position = Vector2(2496, -1088)
+scale = Vector2(22.3304, 19.9523)
+set_focus = true
+focus_point = Vector2(2496, -1088)
