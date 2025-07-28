@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://crqpnxl7umhmk"]
+[gd_scene load_steps=6 format=4 uid="uid://crqpnxl7umhmk"]
 
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="1_0otwi"]
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_nro4c"]
 [ext_resource type="Texture2D" uid="uid://d2uhxy6ss4gn5" path="res://icon.svg" id="2_oj7yv"]
+[ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="4_e6eo5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0otwi"]
 
@@ -32,3 +33,7 @@ texture = ExtResource("2_oj7yv")
 
 [node name="Kevin" parent="." instance=ExtResource("1_0otwi")]
 position = Vector2(61, -867)
+
+[node name="Slime" parent="." instance=ExtResource("4_e6eo5")]
+position = Vector2(2496, -480)
+width = 4
