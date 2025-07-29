@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2fsw8ubqatv0"]
+
+[ext_resource type="Texture2D" uid="uid://c8qthsxk80o13" path="res://sprites/EnemyFlying.png" id="1_6a4gm"]
+[ext_resource type="Script" uid="uid://b28o1fvqxybyh" path="res://scripts/Enemies/EnemyFlying.gd" id="1_8ccjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ccjg"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6a4gm"]
+radius = 900.0
+
+[sub_resource type="GDScript" id="GDScript_08mex"]
+resource_name = "TempAnim"
+script/source = "extends Sprite2D
+
+
+var timer:float = 0.05
+
+
+func _process(delta: float) -> void:
+	timer -= delta
+	if timer <= 0.0:
+		timer += 0.05
+		flip_h = not flip_h
+"
+
+[node name="EnemyFlying" type="CharacterBody2D"]
+script = ExtResource("1_8ccjg")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-128, -128, 256, 256)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_8ccjg")
+debug_color = Color(0.977022, 0, 0.407356, 0.42)
+
+[node name="DetectBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectBox"]
+shape = SubResource("CircleShape2D_6a4gm")
+debug_color = Color(0.976471, 0, 0.407843, 0.0666667)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_6a4gm")
+script = SubResource("GDScript_08mex")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_player_entered"]
+[connection signal="body_entered" from="DetectBox" to="." method="_on_player_detected"]
+[connection signal="body_exited" from="DetectBox" to="." method="_on_player_no_longer_detected"]

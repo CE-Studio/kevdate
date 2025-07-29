@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=9 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="2_fhqol"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="4_iotdp"]
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="5_nutv8"]
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="6_05pb0"]
+[ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c63a0"]
 normal = Vector2(1, 0)
@@ -240,6 +241,15 @@ position = Vector2(17472, -320)
 
 [node name="EnemyBasic10" parent="EnemyGroup" instance=ExtResource("5_nutv8")]
 position = Vector2(17728, -320)
+
+[node name="EnemyFlying" parent="EnemyGroup" instance=ExtResource("6_dl8mf")]
+position = Vector2(16192, -896)
+
+[node name="EnemyFlying2" parent="EnemyGroup" instance=ExtResource("6_dl8mf")]
+position = Vector2(17472, -1088)
+
+[node name="EnemyFlying3" parent="EnemyGroup" instance=ExtResource("6_dl8mf")]
+position = Vector2(18688, -896)
 
 [node name="PlatformGroup" type="Node2D" parent="."]
 
