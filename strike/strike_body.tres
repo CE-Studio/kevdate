@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dobum8xwjbg7u"]
+
+[ext_resource type="Texture2D" uid="uid://blytmnhojdbvs" path="res://models/strike/strike_strike.png" id="1_yyt0b"]
+[ext_resource type="Texture2D" uid="uid://cckpydogus0ax" path="res://models/strike/strike_e.png" id="2_xkqtc"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_yyt0b")
+emission_enabled = true
+emission_texture = ExtResource("2_xkqtc")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy0ii05axyo31"]
+
+[ext_resource type="PackedScene" uid="uid://lofrqw54vr06" path="res://strike/strikemodel.tscn" id="1_firdi"]
+[ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="2_g5o2q"]
+[ext_resource type="Material" uid="uid://wysu3qeoiosv" path="res://kevstandalone/colorcrushpixel.tres" id="3_6xn11"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5md2u"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ad7ci"]
+sky_material = SubResource("ProceduralSkyMaterial_5md2u")
+
+[sub_resource type="Environment" id="Environment_0yakn"]
+background_mode = 1
+sky = SubResource("Sky_ad7ci")
+ambient_light_source = 2
+ambient_light_color = Color(0.572988, 0.572988, 0.572988, 1)
+ambient_light_energy = 0.6
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yhq35"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0yakn")
+
+[node name="strike" parent="." instance=ExtResource("1_firdi")]
+transform = Transform3D(-0.0174524, 0, -0.999848, 0, 1, 0, 0.999848, 0, -0.0174524, -1.8, 0.275, -1.842)
+
+[node name="Player" parent="." instance=ExtResource("2_g5o2q")]
+transform = Transform3D(0.233445, 0, 0.97237, 0, 1, 0, -0.97237, 0, 0.233445, 2.515, -0.672, -1.842)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.24537e-07, 0, -6)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.71555e-08, -0.850019)
+material_override = ExtResource("3_6xn11")
+mesh = SubResource("PlaneMesh_yhq35")

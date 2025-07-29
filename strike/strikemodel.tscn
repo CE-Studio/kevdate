@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=3 uid="uid://lofrqw54vr06"]
+
+[ext_resource type="PackedScene" uid="uid://nijp7ps8800t" path="res://strike/strike.glb" id="1_mrn62"]
+[ext_resource type="Material" uid="uid://b3p2751uotv2b" path="res://strike/strike_wings.tres" id="2_x74hx"]
+[ext_resource type="Texture2D" uid="uid://bgevr4tixp5et" path="res://strike/strike_eye_0.png" id="3_krhtl"]
+[ext_resource type="Texture2D" uid="uid://dxjphcaxbdqg4" path="res://strike/strike_eye_1.png" id="4_062rm"]
+[ext_resource type="Texture2D" uid="uid://rdkf2jyvf68" path="res://strike/strike_eye_3.png" id="5_jey4a"]
+[ext_resource type="Texture2D" uid="uid://bynq5nc45u4tp" path="res://strike/strike_eye_2.png" id="6_8ucta"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6nv2l"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqtvg"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6nv2l")
+
+[node name="strike" instance=ExtResource("1_mrn62")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.93516, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/29/scale = Vector3(1, 1, 1)
+bones/35/scale = Vector3(1, 1, 1)
+bones/41/scale = Vector3(1, 1, 1)
+bones/55/scale = Vector3(1, 1, 1)
+
+[node name="Cube_001" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.0978923, 2.54019e-13, 1.03473e-13, -3.51719e-13, 0.0978923, -2.23517e-08, -1.10134e-13, 1.11759e-08, 0.0978923, -1.31006e-12, 3.45232, -0.207024)
+
+[node name="Cylinder_001" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.0978923, 2.54019e-13, 1.03473e-13, -3.51719e-13, 0.0978923, -2.23517e-08, -1.10134e-13, 1.11759e-08, 0.0978923, -1.31006e-12, 3.45232, -0.207024)
+
+[node name="Vert_007" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.0978923, 2.54019e-13, 1.03473e-13, -3.51719e-13, 0.0978923, -2.23517e-08, -1.10134e-13, 1.11759e-08, 0.0978923, -1.31006e-12, 3.45232, -0.207024)
+
+[node name="Cylinder_2" parent="Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.0978923, 2.54019e-13, 1.03473e-13, -3.51719e-13, 0.0978923, -2.23517e-08, -1.10134e-13, 1.11759e-08, 0.0978923, -1.31006e-12, 3.45232, -0.207024)
+
+[node name="Cube_001_2" parent="Armature/Skeleton3D" index="4"]
+transform = Transform3D(0.157053, 9.97305e-09, 4.74125e-10, -5.85221e-10, 0.0166402, -0.156169, -9.96714e-09, 0.156169, 0.0166402, -6.75544e-09, 2.60716, -0.173264)
+
+[node name="Cylinder_001_2" parent="Armature/Skeleton3D" index="5"]
+transform = Transform3D(0.157053, 9.97305e-09, 4.74125e-10, -5.85221e-10, 0.0166402, -0.156169, -9.96714e-09, 0.156169, 0.0166402, -6.75544e-09, 2.60716, -0.173264)
+
+[node name="Vert_007_2" parent="Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.157053, 9.97305e-09, 4.74125e-10, -5.85221e-10, 0.0166402, -0.156169, -9.96714e-09, 0.156169, 0.0166402, -6.75544e-09, 2.60716, -0.173264)
+
+[node name="Cylinder_3" parent="Armature/Skeleton3D" index="7"]
+transform = Transform3D(0.157053, 9.97305e-09, 4.74125e-10, -5.85221e-10, 0.0166402, -0.156169, -9.96714e-09, 0.156169, 0.0166402, -6.75544e-09, 2.60716, -0.173264)
+
+[node name="Cube_001_3" parent="Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.154618, 9.7183e-09, -1.47462e-09, -1.00355e-09, -0.00746724, -0.154438, -9.77817e-09, 0.154438, -0.00746726, -7.2043e-09, 2.289, -0.154457)
+
+[node name="Cylinder_001_3" parent="Armature/Skeleton3D" index="9"]
+transform = Transform3D(0.154618, 9.7183e-09, -1.47462e-09, -1.00355e-09, -0.00746724, -0.154438, -9.77817e-09, 0.154438, -0.00746726, -7.2043e-09, 2.289, -0.154457)
+
+[node name="Vert_007_3" parent="Armature/Skeleton3D" index="10"]
+transform = Transform3D(0.154618, 9.7183e-09, -1.47462e-09, -1.00355e-09, -0.00746724, -0.154438, -9.77817e-09, 0.154438, -0.00746726, -7.2043e-09, 2.289, -0.154457)
+
+[node name="Cylinder_4" parent="Armature/Skeleton3D" index="11"]
+transform = Transform3D(0.154618, 9.7183e-09, -1.47462e-09, -1.00355e-09, -0.00746724, -0.154438, -9.77817e-09, 0.154438, -0.00746726, -7.2043e-09, 2.289, -0.154457)
+
+[node name="Cube_001_4" parent="Armature/Skeleton3D" index="12"]
+transform = Transform3D(0.139807, -3.83693e-13, -1.24345e-13, 3.69482e-13, 0.139773, -0.00309423, 1.38556e-13, 0.00309414, 0.139772, 4.00931e-13, 0.248865, 2.49203)
+
+[node name="Cylinder_001_4" parent="Armature/Skeleton3D" index="13"]
+transform = Transform3D(0.139807, -3.83693e-13, -1.24345e-13, 3.69482e-13, 0.139773, -0.00309423, 1.38556e-13, 0.00309414, 0.139772, 4.00932e-13, 0.248865, 2.49203)
+
+[node name="Vert_007_4" parent="Armature/Skeleton3D" index="14"]
+transform = Transform3D(0.139807, -3.83693e-13, -1.24345e-13, 3.69482e-13, 0.139773, -0.00309423, 1.38556e-13, 0.00309414, 0.139772, 4.00932e-13, 0.248865, 2.49203)
+
+[node name="Cylinder_5" parent="Armature/Skeleton3D" index="15"]
+transform = Transform3D(0.139807, -3.83693e-13, -1.24345e-13, 3.69482e-13, 0.139773, -0.00309423, 1.38556e-13, 0.00309414, 0.139772, 4.00933e-13, 0.248865, 2.49203)
+
+[node name="Cube_001_5" parent="Armature/Skeleton3D" index="16"]
+transform = Transform3D(0.247414, 4.62503e-14, -5.07655e-14, -6.27919e-14, 0.232812, -0.0837387, 2.51814e-14, 0.0837386, 0.232812, -1.8932e-13, 0.345565, 1.18068)
+
+[node name="Cylinder_001_5" parent="Armature/Skeleton3D" index="17"]
+transform = Transform3D(0.247414, 4.62503e-14, -5.07655e-14, -6.27919e-14, 0.232812, -0.0837387, 2.51814e-14, 0.0837386, 0.232812, -1.8932e-13, 0.345565, 1.18068)
+
+[node name="Vert_007_5" parent="Armature/Skeleton3D" index="18"]
+transform = Transform3D(0.247414, 4.62503e-14, -5.07655e-14, -6.27919e-14, 0.232812, -0.0837387, 2.51814e-14, 0.0837386, 0.232812, -1.8932e-13, 0.345565, 1.18068)
+
+[node name="Cylinder_6" parent="Armature/Skeleton3D" index="19"]
+transform = Transform3D(0.247414, 4.62503e-14, -5.07655e-14, -6.27919e-14, 0.232812, -0.0837387, 2.51814e-14, 0.0837386, 0.232812, -1.8932e-13, 0.345565, 1.18068)
+
+[node name="Cube_001_6" parent="Armature/Skeleton3D" index="20"]
+transform = Transform3D(0.247414, 2.66281e-14, -4.84644e-14, -5.55123e-14, 0.171084, -0.178728, 7.34254e-15, 0.178728, 0.171084, -1.79265e-13, 0.704696, 0.579761)
+
+[node name="Cylinder_001_6" parent="Armature/Skeleton3D" index="21"]
+transform = Transform3D(0.247414, 2.66281e-14, -4.84644e-14, -5.55123e-14, 0.171084, -0.178728, 7.34254e-15, 0.178728, 0.171084, -1.79265e-13, 0.704696, 0.579761)
+
+[node name="Vert_007_6" parent="Armature/Skeleton3D" index="22"]
+transform = Transform3D(0.247414, 2.66281e-14, -4.84644e-14, -5.55123e-14, 0.171084, -0.178728, 7.34254e-15, 0.178728, 0.171084, -1.79265e-13, 0.704696, 0.579761)
+
+[node name="Cylinder_7" parent="Armature/Skeleton3D" index="23"]
+transform = Transform3D(0.247414, 2.66281e-14, -4.84644e-14, -5.55123e-14, 0.171084, -0.178728, 7.34254e-15, 0.178728, 0.171084, -1.79265e-13, 0.704696, 0.579761)
+
+[node name="Visor" parent="Armature/Skeleton3D" index="46"]
+material_override = SubResource("StandardMaterial3D_nqtvg")
+
+[node name="WingMembrane" parent="Armature/Skeleton3D" index="47"]
+material_override = ExtResource("2_x74hx")
+
+[node name="SubViewport" type="SubViewport" parent="." index="1"]
+disable_3d = true
+size = Vector2i(256, 256)
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.184314, 0.184314, 1)
+
+[node name="eyer" type="Node2D" parent="SubViewport" index="1"]
+position = Vector2(57, 144)
+rotation = -0.244346
+
+[node name="StrikeEye0" type="Sprite2D" parent="SubViewport/eyer" index="0"]
+clip_children = 2
+z_index = 1
+texture = ExtResource("3_krhtl")
+
+[node name="StrikeEye1" type="Sprite2D" parent="SubViewport/eyer/StrikeEye0" index="0"]
+self_modulate = Color(0.621524, 0.621524, 0.621524, 1)
+position = Vector2(0, 7.565)
+texture = ExtResource("4_062rm")
+
+[node name="StrikeEye3" type="Sprite2D" parent="SubViewport/eyer/StrikeEye0" index="1"]
+z_index = -1
+texture = ExtResource("5_jey4a")
+
+[node name="StrikeEye2" type="Sprite2D" parent="SubViewport/eyer/StrikeEye0/StrikeEye3" index="0"]
+z_index = 1
+texture = ExtResource("6_8ucta")
+
+[node name="eyel" type="Node2D" parent="SubViewport" index="2"]
+position = Vector2(199, 144)
+rotation = 0.244346
+
+[node name="StrikeEye0" type="Sprite2D" parent="SubViewport/eyel" index="0"]
+clip_children = 2
+z_index = 1
+texture = ExtResource("3_krhtl")
+flip_h = true
+
+[node name="StrikeEye1" type="Sprite2D" parent="SubViewport/eyel/StrikeEye0" index="0"]
+self_modulate = Color(0.621524, 0.621524, 0.621524, 1)
+position = Vector2(0, 7.565)
+texture = ExtResource("4_062rm")
+flip_h = true
+
+[node name="StrikeEye3" type="Sprite2D" parent="SubViewport/eyel/StrikeEye0" index="1"]
+z_index = -1
+texture = ExtResource("5_jey4a")
+flip_h = true
+
+[node name="StrikeEye2" type="Sprite2D" parent="SubViewport/eyel/StrikeEye0/StrikeEye3" index="0"]
+z_index = 1
+texture = ExtResource("6_8ucta")
+flip_h = true
