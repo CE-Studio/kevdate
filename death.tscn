@@ -54,3 +54,5 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("3_531me")
+
+[connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="." method="_on_button_pressed"]

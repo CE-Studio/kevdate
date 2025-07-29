@@ -9,6 +9,8 @@ const HEALTH_METER_VARIANCE_MAX := 64
 
 var health_meter_variance := 0.0
 
+static var load_scene:String = ""
+
 @onready var health_meter:TextureRect = $"Control/HealthMeter"
 #endregion
 

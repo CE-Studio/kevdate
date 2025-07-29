@@ -30,3 +30,7 @@ func _process(delta: float) -> void:
 		button.visible = true
 	if button_active:
 		button.modulate.a = elapsed - BUTTON_TIME
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(UIHandler.load_scene)
