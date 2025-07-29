@@ -14,3 +14,7 @@ func _on_player_enter(body:Node2D) -> void:
 		collected = true
 		sprite.visible = false
 		particles.emitting = true
+
+
+func _on_cpu_particles_2d_finished() -> void:
+	queue_free()

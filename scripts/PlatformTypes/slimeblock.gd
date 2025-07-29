@@ -19,8 +19,10 @@ extends Platform
 			sprite.size.y = SPR_SCALE_MULT * value
 			sprite.position.y = SPR_SCALE_MULT * value * -2
 
-const BOX_SCALE_MULT:int = 96
-const SPR_SCALE_MULT:int = 24
+const BOX_SCALE_MULT:int = 64
+const SPR_SCALE_MULT:int = 16
+const MAX_VEL:int = -3000
+const VEL_MULT:float = 1.1
 
 @onready var box:CollisionShape2D = $"CollisionShape2D"
 @onready var sprite:NinePatchRect = $"NinePatchRect"
@@ -42,5 +44,5 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if body.last_nonzero_vel.y > 0.0 and abs(body.position.x - position.x) < (box_shape.size.x * 0.5):
-			body.velocity.y = body.last_nonzero_vel.y * -1.25
 			body.state_machine.switch_state("Jump")
+			body.velocity.y = clampf(body.last_nonzero_vel.y * -VEL_MULT, MAX_VEL, 0.0)
