@@ -35,3 +35,9 @@ layout_mode = 2
 text = "Level1"
 script = ExtResource("1_y7k74")
 scn = "uid://dujcapua5qt0i"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "date test"
+script = ExtResource("1_y7k74")
+scn = "uid://dy0ii05axyo31"

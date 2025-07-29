@@ -1,0 +1,16 @@
+~ start
+*: DATING! START!!!
+*: The train glares at you, silently.
+- Flirt
+	Kevin: woaw ur hot~
+	Strike: ...
+	=> sec1
+- Idk
+	*: You... pull out a mic...?
+	=> DANC
+~ DANC
+!spec
+~ sec1
+*: Uh oh, she seems angry...
+!attk1
+=> END

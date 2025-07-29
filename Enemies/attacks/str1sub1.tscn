@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://crnpv4ma4fe8l"]
+
+[ext_resource type="Texture2D" uid="uid://bx5cb4oexf5aa" path="res://sprites/trainattk_1.png" id="1_0hf3h"]
+[ext_resource type="Texture2D" uid="uid://wbdsxs31q7e5" path="res://sprites/trainattk_2.png" id="2_2y2dm"]
+
+[sub_resource type="GDScript" id="GDScript_ch3ws"]
+script/source = "extends Node2D
+
+
+var sub:PackedScene = preload(\"res://Enemies/attacks/str1sub2.tscn\")
+
+
+func _ready() -> void:
+	position = position.normalized() * 800
+	look_at(DateControl.kevheart.global_position)
+
+
+func _process(delta: float) -> void:
+	move_local_x(7)
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+
+
+func _on_timer_2_timeout() -> void:
+	var nt:Node2D = sub.instantiate()
+	add_sibling(nt)
+	nt.global_transform = global_transform
+"
+
+[node name="Str1Sub1" type="Node2D"]
+texture_filter = 1
+script = SubResource("GDScript_ch3ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-203, 0)
+texture = ExtResource("1_0hf3h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-169, 0)
+texture = ExtResource("2_2y2dm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-135, 0)
+texture = ExtResource("2_2y2dm")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-101, 0)
+texture = ExtResource("2_2y2dm")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-67, 0)
+texture = ExtResource("2_2y2dm")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-33, 0)
+texture = ExtResource("2_2y2dm")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_0hf3h")
+flip_h = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.08
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
