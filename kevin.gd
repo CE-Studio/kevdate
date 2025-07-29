@@ -16,6 +16,8 @@ const MAX_AIR_SPEED := 2500.0   # Max horizontal speed in air
 const OVERSPEED_FRICTION_MULTIPLIER := 0.05
 const OVERSPEED_ACCELERATION_MULTIPLIER := 0.5
 
+const MAX_HEALTH := 4
+const INVUL_TIME := 1.25
 #endregion
 
 var states: Dictionary[StringName, State]
@@ -24,10 +26,13 @@ static var alive := true
 var last_nonzero_vel:Vector2 = Vector2.ZERO
 var last_true_vel:Vector2 = Vector2.ZERO
 
+var health:int = MAX_HEALTH
+var invul_time:float = 0.0
+
 
 @onready var body:Sprite2D = $body
 @onready var cam:CamControl = $"Camera2D"
-
+@onready var ui:UIHandler = $"MainUI"
 
 func is_not_moving() -> bool:
 	return is_equal_approx(velocity.x / 1000000.0, 0)
@@ -45,6 +50,12 @@ func _state_setup() -> void:
 
 func _process(delta: float) -> void:
 	state_machine.tick(delta)
+	if invul_time > 0:
+		invul_time -= delta
+		if invul_time <= 0.0:
+			body.visible = true
+		else:
+			body.visible = not body.visible
 	
 
 func _physics_process(delta: float) -> void:
@@ -57,6 +68,17 @@ func _physics_process(delta: float) -> void:
 	state_machine.physics_tick(delta)
 	if not is_not_moving():
 		body.flip_h = (velocity.x < 0)
+
+
+func damage() -> void:
+	if invul_time > 0.0:
+		return
+	health -= 1
+	if health <= 0:
+		get_tree().change_scene_to_file("res://death.tscn")
+	else:
+		ui.set_health_meter_noisy(health)
+	invul_time = INVUL_TIME
 
 
 

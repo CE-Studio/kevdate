@@ -1,9 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://uvcn65h66alb"]
+[gd_scene load_steps=39 format=3 uid="uid://uvcn65h66alb"]
 
 [ext_resource type="Script" uid="uid://dhnyjcyb3t8hd" path="res://kevin.gd" id="1_7vnhk"]
 [ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_7vnhk"]
 [ext_resource type="Script" uid="uid://brarpl4plirtq" path="res://scripts/camcontrol.gd" id="2_i71df"]
 [ext_resource type="Texture2D" uid="uid://caomoxwr7bkie" path="res://sprites/TouchButtons.png" id="3_ypijm"]
+[ext_resource type="Texture2D" uid="uid://xtooxfg3de2r" path="res://sprites/HealthMeter.png" id="5_o1mg7"]
+[ext_resource type="Script" uid="uid://chfeys30vqpdi" path="res://scripts/ui_handler.gd" id="5_p5eeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi4g3"]
 size = Vector2(20, 70)
@@ -214,6 +216,10 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("3_ypijm")
 region = Rect2(128, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_23cmr"]
+atlas = ExtResource("5_o1mg7")
+region = Rect2(256, 0, 64, 64)
+
 [node name="Kevin" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
@@ -318,3 +324,24 @@ texture_normal = SubResource("AtlasTexture_hejao")
 texture_pressed = SubResource("AtlasTexture_g74gu")
 passby_press = true
 action = "Dash"
+
+[node name="MainUI" type="CanvasLayer" parent="."]
+script = ExtResource("5_p5eeg")
+
+[node name="Control" type="Control" parent="MainUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthMeter" type="TextureRect" parent="MainUI/Control"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 88.0
+offset_bottom = 88.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_23cmr")
