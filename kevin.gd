@@ -75,7 +75,8 @@ func damage() -> void:
 		return
 	health -= 1
 	if health <= 0:
-		get_tree().change_scene_to_file("res://death.tscn")
+		#get_tree().change_scene_to_file("res://death.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://death.tscn")
 	else:
 		ui.set_health_meter_noisy(health)
 	invul_time = INVUL_TIME

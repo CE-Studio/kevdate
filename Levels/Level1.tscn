@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=10 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
+[ext_resource type="Script" uid="uid://cd77gxo62agd5" path="res://scripts/scene_updater.gd" id="1_xcayt"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="2_fhqol"]
 [ext_resource type="PackedScene" uid="uid://cwie4au2eojrg" path="res://gear.tscn" id="3_fhqol"]
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="4_iotdp"]
@@ -12,6 +13,8 @@
 normal = Vector2(1, 0)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_xcayt")
+scene = "res://Levels/Level1.tscn"
 
 [node name="Back" type="TileMapLayer" parent="."]
 texture_filter = 1
