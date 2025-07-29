@@ -29,3 +29,9 @@ layout_mode = 2
 text = "shadetest"
 script = ExtResource("1_y7k74")
 scn = "uid://bubnqoclqwdwy"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level1"
+script = ExtResource("1_y7k74")
+scn = "uid://dujcapua5qt0i"

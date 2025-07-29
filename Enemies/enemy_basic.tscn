@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://df8iklppw5lpo"]
+
+[ext_resource type="Texture2D" uid="uid://cd37pw4usnfpn" path="res://sprites/EnemyBasic.png" id="1_3nb1y"]
+[ext_resource type="Script" uid="uid://cgwnt5hra1dgw" path="res://scripts/Enemies/EnemyBasic.gd" id="1_vdxw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nb1y"]
+size = Vector2(128, 128)
+
+[sub_resource type="GDScript" id="GDScript_vdxw3"]
+resource_name = "TempAnim"
+script/source = "extends Sprite2D
+
+
+var timer:float = 0.3
+
+
+func _process(delta: float) -> void:
+	timer -= delta
+	if timer <= 0.0:
+		timer += 0.3
+		flip_h = not flip_h
+"
+
+[node name="EnemyBasic" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 9
+floor_snap_length = 16.0
+script = ExtResource("1_vdxw3")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-128, -128, 256, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3nb1y")
+debug_color = Color(0.976471, 0, 0.407843, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3nb1y")
+debug_color = Color(0.977022, 0, 0.407356, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_3nb1y")
+script = SubResource("GDScript_vdxw3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]
