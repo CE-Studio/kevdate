@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 #region Constants
 const DS:PackedScene = preload("res://death.tscn")
+const physgear:PackedScene = preload("res://physics_gear.tscn")
 
 const SPEED := 1500.0          # Max ground speed
 const ACCELERATION := 0.25      # How quickly player accelerates on ground
@@ -87,11 +88,15 @@ func _physics_process(delta: float) -> void:
 func damage() -> void:
 	if invul_time > 0.0:
 		return
-	health -= 1
-	if health <= 0:
+	if health - 1 <= 0:
 		get_tree().change_scene_to_packed.call_deferred(DS)
 	else:
-		ui.set_health_meter_noisy(health)
+		if gears > 0:
+			call_deferred("spawn_physgears", gears)
+			change_gear_count(-gears)
+		else:
+			health -= 1
+			ui.set_health_meter_noisy(health)
 		sfx_damage.play()
 	invul_time = INVUL_TIME
 
@@ -100,6 +105,16 @@ func change_gear_count(amount: int) -> void:
 	gears += amount
 	ui.gear_counter.text = str(gears)
 
+
+func spawn_physgears(amount: int) -> void:
+	for i in range(amount):
+		var new_gear = physgear.instantiate()
+		new_gear.position = position
+		get_parent().add_child(new_gear)
+		new_gear.apply_impulse(Vector2(
+			randf_range(-2560, 2560),
+			randf_range(-2560, 2560)
+		))
 
 
 class PlayerState extends State:
