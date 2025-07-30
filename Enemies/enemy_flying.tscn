@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2fsw8ubqatv0"]
+[gd_scene load_steps=7 format=3 uid="uid://d2fsw8ubqatv0"]
 
 [ext_resource type="Texture2D" uid="uid://c8qthsxk80o13" path="res://sprites/EnemyFlying.png" id="1_6a4gm"]
 [ext_resource type="Script" uid="uid://b28o1fvqxybyh" path="res://scripts/Enemies/EnemyFlying.gd" id="1_8ccjg"]
+[ext_resource type="AudioStream" uid="uid://i2nqleeeaaio" path="res://sfx/EnemyKillAlt.wav" id="3_08mex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ccjg"]
 size = Vector2(128, 128)
@@ -51,6 +52,10 @@ texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("1_6a4gm")
 script = SubResource("GDScript_08mex")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_08mex")
+bus = &"Sfx"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_player_entered"]
 [connection signal="body_entered" from="DetectBox" to="." method="_on_player_detected"]

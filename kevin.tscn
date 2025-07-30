@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://uvcn65h66alb"]
+[gd_scene load_steps=44 format=3 uid="uid://uvcn65h66alb"]
 
 [ext_resource type="Script" uid="uid://dhnyjcyb3t8hd" path="res://kevin.gd" id="1_7vnhk"]
 [ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_7vnhk"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://xtooxfg3de2r" path="res://sprites/HealthMeter.png" id="5_o1mg7"]
 [ext_resource type="Script" uid="uid://chfeys30vqpdi" path="res://scripts/ui_handler.gd" id="5_p5eeg"]
 [ext_resource type="Texture2D" uid="uid://crqcar71h30vd" path="res://sprites/Gear.png" id="7_60esd"]
+[ext_resource type="AudioStream" uid="uid://b26jkrbhhuth8" path="res://sfx/KevJump.wav" id="8_wctw4"]
+[ext_resource type="AudioStream" uid="uid://cs41ogr4u2nnp" path="res://sfx/KevDash.wav" id="9_g74gu"]
+[ext_resource type="AudioStream" uid="uid://4fr68cokq2x3" path="res://sfx/KevDamage.wav" id="9_hejao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi4g3"]
 size = Vector2(20, 70)
@@ -373,3 +376,17 @@ expand_mode = 2
 [node name="Label" type="Label" parent="MainUI/Control/GearCounter"]
 layout_mode = 2
 text = "0"
+
+[node name="AudioGroup" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="AudioGroup"]
+stream = ExtResource("8_wctw4")
+bus = &"Sfx"
+
+[node name="Dash" type="AudioStreamPlayer" parent="AudioGroup"]
+stream = ExtResource("9_g74gu")
+bus = &"Sfx"
+
+[node name="Damage" type="AudioStreamPlayer" parent="AudioGroup"]
+stream = ExtResource("9_hejao")
+bus = &"Sfx"

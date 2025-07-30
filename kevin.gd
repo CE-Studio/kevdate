@@ -18,6 +18,11 @@ const MAX_AIR_SPEED := 2500.0   # Max horizontal speed in air
 const OVERSPEED_FRICTION_MULTIPLIER := 0.05
 const OVERSPEED_ACCELERATION_MULTIPLIER := 0.5
 
+const DASH_VELOCITY_X := 2750.0
+const DASH_VELOCITY_Y := -1500.0
+const DASH_ACCELERATION := 0.01
+const DASH_FRICTION := 0.02
+
 const MAX_HEALTH := 4
 const INVUL_TIME := 1.25
 #endregion
@@ -28,6 +33,7 @@ static var alive := true
 static var gears:int = 0
 var last_nonzero_vel:Vector2 = Vector2.ZERO
 var last_true_vel:Vector2 = Vector2.ZERO
+var facing_left:bool = false
 
 var health:int = MAX_HEALTH
 var invul_time:float = 0.0
@@ -36,6 +42,10 @@ var invul_time:float = 0.0
 @onready var body:Sprite2D = $body
 @onready var cam:CamControl = $"Camera2D"
 @onready var ui:UIHandler = $"MainUI"
+
+@onready var sfx_jump:AudioStreamPlayer = $"AudioGroup/Jump"
+@onready var sfx_dash:AudioStreamPlayer = $"AudioGroup/Dash"
+@onready var sfx_damage:AudioStreamPlayer = $"AudioGroup/Damage"
 
 func is_not_moving() -> bool:
 	return is_equal_approx(velocity.x / 1000000.0, 0)
@@ -50,6 +60,7 @@ func _state_setup() -> void:
 	states["Walk"] = Walk.new(self)
 	states["Jump"] = Jump.new(self)
 	states["Fall"] = Fall.new(self)
+	states["Dash"] = Dash.new(self)
 
 func _process(delta: float) -> void:
 	state_machine.tick(delta)
@@ -81,6 +92,7 @@ func damage() -> void:
 		get_tree().change_scene_to_packed.call_deferred(DS)
 	else:
 		ui.set_health_meter_noisy(health)
+		sfx_damage.play()
 	invul_time = INVUL_TIME
 
 
@@ -112,6 +124,7 @@ class PlayerState extends State:
 		if dir == 0:
 			player.velocity.x = lerp(player.velocity.x, 0.0, dynamic_friction_factor)
 		else:
+			player.facing_left = dir < 0
 			var target_speed = dir * current_speed_cap
 			player.velocity.x = lerp(player.velocity.x, target_speed, dynamic_acceleration_factor)
 			
@@ -143,6 +156,9 @@ class Walk extends PlayerState:
 			player.state_machine.switch_state("Fall")
 		if Input.is_action_just_pressed("Jump"):
 			player.state_machine.switch_state("Jump")
+			player.sfx_jump.play()
+		if Input.is_action_just_pressed("Dash"):
+			player.state_machine.switch_state("Dash")
 		
 	func physics(delta: float) -> void:
 
@@ -172,6 +188,9 @@ class Jump extends PlayerState:
 
 		if Input.is_action_just_released("Jump") and player.velocity.y < 0:
 			player.state_machine.switch_state("Fall")
+		
+		if Input.is_action_just_pressed("Dash"):
+			player.state_machine.switch_state("Dash")
 
 
 	func physics(delta: float) -> void:
@@ -198,8 +217,36 @@ class Fall extends PlayerState:
 	func update(delta: float) -> void:
 		if player.is_on_floor():
 			player.state_machine.switch_state("Walk")
+		if Input.is_action_just_pressed("Dash"):
+			player.state_machine.switch_state("Dash")
 		pass
 
 	func physics(delta: float) -> void:
 		_common_horizontal_movement(delta, player.MAX_AIR_SPEED, player.AIR_ACCELERATION, player.AIR_FRICTION)
+		super(delta)
+
+class Dash extends PlayerState:
+	
+	func enter() -> void:
+		print("Dash entered")
+		player.velocity = Vector2(
+			DASH_VELOCITY_X * (-1 if player.facing_left else 1),
+			DASH_VELOCITY_Y
+		)
+		player.body.rotation_degrees = -90.0 if player.facing_left else 90.0
+		player.sfx_dash.play()
+		pass
+	
+	func exit() -> void:
+		print("Dash exited")
+		player.body.rotation_degrees = 0.0
+		pass
+	
+	func update(delta: float) -> void:
+		if player.is_on_floor():
+			player.state_machine.switch_state("Walk")
+		pass
+	
+	func physics(delta: float) -> void:
+		_common_horizontal_movement(delta, player.DASH_VELOCITY_X, player.DASH_ACCELERATION, player.DASH_FRICTION)
 		super(delta)

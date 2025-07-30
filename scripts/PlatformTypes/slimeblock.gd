@@ -29,6 +29,7 @@ const VEL_MULT:float = 1.1
 @onready var box_shape:RectangleShape2D = box.shape
 @onready var area:Area2D = $"Area2D"
 @onready var area_box:CollisionShape2D = $"Area2D/CollisionShape2D"
+@onready var sfx:AudioStreamPlayer = $"AudioStreamPlayer"
 #endregion
 
 
@@ -46,3 +47,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if body.last_nonzero_vel.y > 0.0 and abs(body.position.x - position.x) < (box_shape.size.x * 0.5):
 			body.state_machine.switch_state("Jump")
 			body.velocity.y = clampf(body.last_nonzero_vel.y * -VEL_MULT, MAX_VEL, 0.0)
+			sfx.play()

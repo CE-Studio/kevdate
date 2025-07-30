@@ -20,9 +20,15 @@ var target_body:Node2D = null
 
 func _ready() -> void:
 	target_point = position
+	sfx_death = $"AudioStreamPlayer"
+	sfx_death.connect("finished", _on_death_sfx_finished)
 
 
 func _process(delta: float) -> void:
+	super(delta)
+	if is_dying:
+		return
+	
 	theta += delta * IDLE_SPEED
 	if theta >= TAU:
 		theta -= TAU
