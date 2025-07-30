@@ -55,6 +55,7 @@ func addpoint() -> void:
 
 
 func rempoint() -> void:
+	$"../kevin/Player/afk".play()
 	$"../CanvasLayer".hp -= randf_range(3, 5)
 
 

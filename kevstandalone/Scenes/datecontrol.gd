@@ -15,6 +15,7 @@ const DS:PackedScene = preload("res://death.tscn")
 @onready var cam:Camera3D = $"../Camera3D"
 @onready var fightbox:PanelContainer = $Control/fightbox
 static var kevheart:Sprite2D
+static var flags:Array[String] = []
 @onready var fightstage = $Control/fightbox/Control/Node2D
 @export var bcol:Color
 @export var boffcol:Color
@@ -47,6 +48,7 @@ func  _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	Player.gears += 1
 	UIHandler.load_scene = load("res://leveldata/datestrike.tres")
 	kevheart = $Control/fightbox/Control/Node2D/Sprite2D
 	bcon.modulate = boffcol
@@ -69,6 +71,11 @@ func _ready() -> void:
 			$"../arrows".hide()
 			show()
 			continue
+		if "!flags" in  line.text:
+			var a = line.text.split("", false)
+			a.remove_at(0)
+			flags.append_array(a)
+			continue
 		if "!attk" in line.text:
 			kevheart.position = Vector2.ZERO
 			var attk:Attack = attacks[line.text].instantiate()
@@ -79,6 +86,7 @@ func _ready() -> void:
 			fght = false
 			fightbox.hide()
 			continue
+		
 		chlbl.text = line.character
 		match line.character:
 			othername:
@@ -98,6 +106,12 @@ func _ready() -> void:
 			var r:String = "item"
 			while r == "item":
 				r = await _r
+				if r == "item":
+					if Player.gears > 0:
+						Player.gears -= 1
+						var nhp := randf_range(1, 2)
+						hp += nhp
+						chlbl.text = "Recoverd " + str(nhp) + " hp!\n You now have " + str(Player.gears) + " gears left"
 				print(r)
 			if r == "flirt":
 				line.next_id = line.responses[0].next_id
