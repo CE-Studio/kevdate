@@ -10,8 +10,8 @@ var collected:bool = false
 
 
 func _on_player_enter(body:Node2D) -> void:
-	if not collected:
-		Player.gears += 1
+	if not collected and body is Player:
+		body.change_gear_count(1)
 		collected = true
 		sprite.visible = false
 		particles.emitting = true

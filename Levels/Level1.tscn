@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=9 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="2_fhqol"]
@@ -6,26 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="4_iotdp"]
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="5_nutv8"]
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="6_05pb0"]
-[ext_resource type="PackedScene" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
-
-[sub_resource type="GDScript" id="GDScript_dl8mf"]
-script/source = "extends Node
-
-
-@export var scene:String = \"\"
-
-
-func _ready() -> void:
-	if scene != \"\":
-		UIHandler.load_scene = scene
-"
+[ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c63a0"]
 normal = Vector2(1, 0)
 
 [node name="Level1" type="Node2D"]
-script = SubResource("GDScript_dl8mf")
-scene = "res://Levels/Level1.tscn"
 
 [node name="Back" type="TileMapLayer" parent="."]
 texture_filter = 1
