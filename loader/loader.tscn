@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqn5d0qqqd173"]
+
+[ext_resource type="Script" uid="uid://dvypieg50ol7j" path="res://loader/loader.gd" id="1_hsw3t"]
+[ext_resource type="Texture2D" uid="uid://ci48di7o4qmf3" path="res://loader/default_l0.png" id="2_t6wgt"]
+[ext_resource type="Material" uid="uid://5eplcn6b6ysb" path="res://loader/progressbar.tres" id="3_8fdog"]
+[ext_resource type="Texture2D" uid="uid://btj0rbb0h02vp" path="res://loader/barback.png" id="3_h17qo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ky2cm"]
+texture = ExtResource("3_h17qo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t23x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7r0s"]
+
+[node name="Loader" type="Control"]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hsw3t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t6wgt")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_type_variation = &"loadbarback"
+theme_override_styles/panel = SubResource("StyleBoxTexture_ky2cm")
+
+[node name="ProgressBar2" type="ProgressBar" parent="VBoxContainer/Panel2"]
+unique_name_in_owner = true
+material = ExtResource("3_8fdog")
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"loadbar"
+theme_override_styles/background = SubResource("StyleBoxEmpty_5t23x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q7r0s")
+max_value = 1.0
+value = 0.5
+fill_mode = 1
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+theme_type_variation = &"tile"
+theme_override_constants/outline_size = 6
+text = "Act ?"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "Subtitle"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "ui.info.loading"
+
+[node name="Control" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 30)
+layout_mode = 2
+
+[node name="d1" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Control"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "."
+
+[node name="Control2" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 30)
+layout_mode = 2
+
+[node name="d2" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Control2"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "."
+
+[node name="Control3" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 30)
+layout_mode = 2
+
+[node name="d3" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Control3"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "."
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_type_variation = &"loadbarback"
+theme_override_styles/panel = SubResource("StyleBoxTexture_ky2cm")
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Panel"]
+unique_name_in_owner = true
+material = ExtResource("3_8fdog")
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"loadbar"
+theme_override_styles/background = SubResource("StyleBoxEmpty_5t23x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q7r0s")
+max_value = 1.0
+value = 0.5
+show_percentage = false

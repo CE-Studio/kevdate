@@ -54,6 +54,7 @@ func _ready() -> void:
 			$"../arrows".show()
 			$"../AnimationPlayer".play("tesht")
 			await $"../AnimationPlayer".animation_finished
+			$"../arrows".hide()
 			show()
 			continue
 		if "!attk" in line.text:

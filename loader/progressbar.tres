@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://5eplcn6b6ysb"]
+
+[ext_resource type="Shader" uid="uid://dedg8epk6g0ab" path="res://visuals/shaders/ui/progressbar.tres" id="1_jgrh7"]
+[ext_resource type="Texture2D" uid="uid://cvuabeuwlr3q7" path="res://visuals/textures/loadscreens/bar.png" id="2_ra5fa"]
+
+[resource]
+shader = ExtResource("1_jgrh7")
+shader_parameter/Texture2DParameter = ExtResource("2_ra5fa")

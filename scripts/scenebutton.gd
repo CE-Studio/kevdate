@@ -1,4 +1,4 @@
-class_name SceneButton
+class_name SceneButtonOld
 extends Button
 
 
