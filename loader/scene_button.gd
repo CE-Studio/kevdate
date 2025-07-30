@@ -10,4 +10,5 @@ const LOADER:PackedScene = preload("uid://cqn5d0qqqd173")
 
 func _pressed() -> void:
 	Loader.next = scene
+	UIHandler.load_scene = scene
 	get_tree().change_scene_to_packed(LOADER)

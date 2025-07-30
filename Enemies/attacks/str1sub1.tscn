@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://crnpv4ma4fe8l"]
+[gd_scene load_steps=5 format=3 uid="uid://crnpv4ma4fe8l"]
 
 [ext_resource type="Texture2D" uid="uid://bx5cb4oexf5aa" path="res://sprites/trainattk_1.png" id="1_0hf3h"]
 [ext_resource type="Texture2D" uid="uid://wbdsxs31q7e5" path="res://sprites/trainattk_2.png" id="2_2y2dm"]
@@ -28,6 +28,9 @@ func _on_timer_2_timeout() -> void:
 	add_sibling(nt)
 	nt.global_transform = global_transform
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hf3h"]
+size = Vector2(236, 29)
 
 [node name="Str1Sub1" type="Node2D"]
 texture_filter = 1
@@ -69,6 +72,13 @@ autostart = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.08
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

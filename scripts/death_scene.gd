@@ -4,6 +4,7 @@ extends Node2D
 const SKELETON_WIGGLER_TIME:float = 2.0
 const SKELETON_WIGGLER_RADIUS:float = 100.0
 const BUTTON_TIME:float = 2.5
+const LOADER:PackedScene = preload("uid://cqn5d0qqqd173")
 
 var elapsed:float = 0.0
 var button_active:bool = false
@@ -33,4 +34,5 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file(UIHandler.load_scene)
+	Loader.next = UIHandler.load_scene
+	get_tree().change_scene_to_packed(LOADER)

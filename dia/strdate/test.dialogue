@@ -10,7 +10,14 @@
 	=> DANC
 ~ DANC
 !spec
+Strike: Your vocal skills are... passable.
+=> exit
 ~ sec1
 *: Uh oh, she seems angry...
 !attk1
+Strike: I am not some... [i]showpeice[/i] to oggle.
+=> exit
+~ exit
+*: You survived!
+*: You got 0 XP, 3 XD, and 1 >w>;;
 => END

@@ -11,6 +11,7 @@ var collected:bool = false
 
 func _on_player_enter(body:Node2D) -> void:
 	if not collected:
+		Player.gears += 1
 		collected = true
 		sprite.visible = false
 		particles.emitting = true

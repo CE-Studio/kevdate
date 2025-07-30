@@ -25,8 +25,13 @@ static var kevheart:Sprite2D
 @export var attacks:Dictionary[String, PackedScene]
 
 var running := true
-var hp:float = 100
+var hp:float = 43.81648:
+	set(val):
+		hp = clampf(val, 0, 43.81648)
+		$Control/VBoxContainer/HBoxContainer2/ProgressBar.value = hp
+		$Control/VBoxContainer/HBoxContainer2/Label.text = str(hp)
 var fght := false
+var canhit := true
 
 
 @onready var camlpos := cam.global_position
@@ -50,10 +55,13 @@ func _ready() -> void:
 		if not is_instance_valid(line):
 			break
 		if line.text == "!spec":
-			hide()
+			$Control/VBoxContainer/PanelContainer.hide()
+			$Control/VBoxContainer/HBoxContainer.hide()
 			$"../arrows".show()
 			$"../AnimationPlayer".play("tesht")
 			await $"../AnimationPlayer".animation_finished
+			$Control/VBoxContainer/PanelContainer.show()
+			$Control/VBoxContainer/HBoxContainer.show()
 			$"../arrows".hide()
 			show()
 			continue
@@ -124,3 +132,17 @@ func _process(delta: float) -> void:
 		var movv := Input.get_vector("Left", "Right", "Up", "Down").normalized()
 		kevheart.position += movv * delta * 250
 		kevheart.position = kevheart.position.clamp(Vector2(-120, -120), Vector2(120, 120))
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if canhit:
+		kevheart.modulate.a = 0.5
+		hp -= randf_range(3, 5)
+		canhit = false
+		$"../Timer".start()
+	
+
+
+func _on_timer_timeout() -> void:
+	kevheart.modulate.a = 1
+	canhit = true

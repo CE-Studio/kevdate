@@ -257,6 +257,7 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = SubResource("GDScript_7vnhk")
 
 [node name="Control" type="Control" parent="CanvasLayer"]

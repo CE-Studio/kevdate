@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 #region Constants
+const DS:PackedScene = preload("res://death.tscn")
+
 const SPEED := 1500.0          # Max ground speed
 const ACCELERATION := 0.25      # How quickly player accelerates on ground
 const FRICTION := 0.2          # How quickly player decelerates on ground
@@ -23,6 +25,7 @@ const INVUL_TIME := 1.25
 var states: Dictionary[StringName, State]
 var state_machine: StateMachine
 static var alive := true
+static var gears:int = 0
 var last_nonzero_vel:Vector2 = Vector2.ZERO
 var last_true_vel:Vector2 = Vector2.ZERO
 
@@ -76,7 +79,7 @@ func damage() -> void:
 	health -= 1
 	if health <= 0:
 		#get_tree().change_scene_to_file("res://death.tscn")
-		get_tree().call_deferred("change_scene_to_file", "res://death.tscn")
+		get_tree().change_scene_to_packed.call_deferred(DS)
 	else:
 		ui.set_health_meter_noisy(health)
 	invul_time = INVUL_TIME

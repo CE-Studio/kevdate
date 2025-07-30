@@ -51,11 +51,11 @@ func dr() -> void:
 
 
 func addpoint() -> void:
-	print("nice")
+	$"../CanvasLayer".hp += randf_range(3, 5)
 
 
 func rempoint() -> void:
-	print("eck")
+	$"../CanvasLayer".hp -= randf_range(3, 5)
 
 
 func procinp(a:Node3D) -> void:

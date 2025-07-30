@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dy0ii05axyo31"]
+[gd_scene load_steps=38 format=3 uid="uid://dy0ii05axyo31"]
 
 [ext_resource type="PackedScene" uid="uid://lofrqw54vr06" path="res://strike/strikemodel.tscn" id="1_firdi"]
 [ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="2_g5o2q"]
@@ -527,6 +527,9 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndur8"]
+radius = 14.0357
+
 [sub_resource type="GDScript" id="GDScript_kn24h"]
 script/source = "extends CanvasLayer
 
@@ -694,11 +697,11 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "x"
+text = "43.81648"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "/ x HP"
+text = "/ 43.81648 HP"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(256, 0)
@@ -706,7 +709,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_avqsh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b3kml")
-value = 80.0
+max_value = 43.816
+value = 43.816
 show_percentage = false
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/VBoxContainer"]
@@ -735,6 +739,7 @@ text = "aaa"
 fit_content = true
 scroll_active = false
 script = ExtResource("7_wv8to")
+pause_at_characters = "?!"
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
@@ -800,6 +805,12 @@ size_flags_vertical = 4
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/fightbox/Control/Node2D"]
 texture = ExtResource("14_scv3b")
 
+[node name="Area2D" type="Area2D" parent="CanvasLayer/Control/fightbox/Control/Node2D/Sprite2D"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Control/fightbox/Control/Node2D/Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_ndur8")
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
 script = SubResource("GDScript_kn24h")
@@ -861,6 +872,11 @@ texture_pressed = SubResource("AtlasTexture_7mxdh")
 passby_press = true
 action = "Down"
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/TextureButton2" to="CanvasLayer" method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/TextureButton3" to="CanvasLayer" method="_on_texture_button_3_pressed"]
+[connection signal="area_entered" from="CanvasLayer/Control/fightbox/Control/Node2D/Sprite2D/Area2D" to="CanvasLayer" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="CanvasLayer" method="_on_timer_timeout"]
