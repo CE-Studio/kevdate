@@ -5,6 +5,7 @@ extends CanvasLayer
 signal  _a
 signal  _r(o:String)
 
+const DS:PackedScene = preload("res://death.tscn")
 
 @export var dia:DialogueResource
 @onready var lbl:DialogueLabel = $Control/VBoxContainer/PanelContainer/HBoxContainer/DialogueLabel
@@ -30,6 +31,8 @@ var hp:float = 43.81648:
 		hp = clampf(val, 0, 43.81648)
 		$Control/VBoxContainer/HBoxContainer2/ProgressBar.value = hp
 		$Control/VBoxContainer/HBoxContainer2/Label.text = str(hp)
+		if hp == 0.0:
+			get_tree().change_scene_to_packed.call_deferred(DS)
 var fght := false
 var canhit := true
 
@@ -44,6 +47,7 @@ func  _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	UIHandler.load_scene = load("res://leveldata/datestrike.tres")
 	kevheart = $Control/fightbox/Control/Node2D/Sprite2D
 	bcon.modulate = boffcol
 	var line:DialogueLine

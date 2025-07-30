@@ -12,6 +12,7 @@ var health_meter_variance := 0.0
 static var load_scene:LevelData = preload("res://leveldata/lvl1.tres")
 
 @onready var health_meter:TextureRect = $"Control/HealthMeter"
+@onready var gear_counter:Label = $"Control/GearCounter/Label"
 #endregion
 
 
