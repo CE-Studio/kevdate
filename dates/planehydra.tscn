@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://8fjm2s2t7nit"]
+
+[ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_csvv7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_33xqh"]
+viewport_path = NodePath("kevin/Player/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgqel"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_33xqh")
+
+[node name="Node3D" instance=ExtResource("1_csvv7")]
+
+[node name="kevin" parent="." index="3"]
+transform = Transform3D(0.233442, 0, 0.972371, 0, 1, 0, -0.972371, 0, 0.233442, 2.515, -1.45732, -1.842)
+
+[node name="Vert_001" parent="kevin/Player/player/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hgqel")
+
+[node name="BoneAttachment3D" parent="kevin/Player/player/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, -9.31323e-10, 0.998767, 0.843557, 1.63555, 0.0128214)
+
+[node name="CanvasLayer" parent="." index="13"]
+attacks = Dictionary[String, PackedScene]({})
+
+[editable path="kevin/Player/player"]

@@ -1,6 +1,5 @@
-[gd_scene load_steps=98 format=3 uid="uid://dy0ii05axyo31"]
+[gd_scene load_steps=97 format=3 uid="uid://dy0ii05axyo31"]
 
-[ext_resource type="PackedScene" uid="uid://lofrqw54vr06" path="res://strike/strikemodel.tscn" id="1_firdi"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://kevstandalone/Assets/Textures/visoruv.png" id="2_4hq2o"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://kevstandalone/Assets/Textures/kevin34eyes.png" id="3_5tapb"]
 [ext_resource type="Material" uid="uid://wysu3qeoiosv" path="res://kevstandalone/colorcrushpixel.tres" id="3_6xn11"]
@@ -58,6 +57,7 @@
 [ext_resource type="AudioStream" uid="uid://ya6ceh1dqj74" path="res://kevstandalone/Assets/Sound Effects/Voice Lines/platform 2.wav" id="42_p24ua"]
 [ext_resource type="AudioStream" uid="uid://diow6a8mljvrx" path="res://kevstandalone/Assets/Sound Effects/Voice Lines/platform 3.wav" id="43_tcfdg"]
 [ext_resource type="AudioStream" uid="uid://cmvpne8vwm8w" path="res://kevstandalone/Assets/Sound Effects/Voice Lines/general 1.wav" id="44_s8pp2"]
+[ext_resource type="Script" uid="uid://vrrn5o00y7u6" path="res://kevstandalone/Scenes/datetouch.gd" id="57_4hq2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5md2u"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -680,17 +680,6 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndur8"]
 radius = 14.0357
 
-[sub_resource type="GDScript" id="GDScript_kn24h"]
-script/source = "extends CanvasLayer
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch or event is InputEventScreenDrag:
-		show()
-	elif event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
-		hide()
-"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6irac"]
 atlas = ExtResource("16_ndur8")
 region = Rect2(0, 0, 64, 64)
@@ -718,9 +707,6 @@ environment = SubResource("Environment_0yakn")
 
 [node name="date" type="Node3D" parent="."]
 transform = Transform3D(-0.0174524, 0, -0.999848, 0, 1, 0, 0.999848, 0, -0.0174524, -1.8, -1.65756, -1.842)
-
-[node name="strike" parent="date" instance=ExtResource("1_firdi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93256, 0)
 
 [node name="kevin" type="Node3D" parent="."]
 transform = Transform3D(0.233442, 0, 0.972371, 0, 1, 0, -0.972371, 0, 0.233442, 2.515, -1.45732, -1.842)
@@ -1074,7 +1060,7 @@ shape = SubResource("CircleShape2D_ndur8")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
-script = SubResource("GDScript_kn24h")
+script = ExtResource("57_4hq2o")
 
 [node name="Control" type="Control" parent="CanvasLayer2"]
 layout_mode = 3
