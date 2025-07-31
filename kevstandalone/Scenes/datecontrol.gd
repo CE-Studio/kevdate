@@ -6,6 +6,7 @@ signal  _a
 signal  _r(o:String)
 
 const DS:PackedScene = preload("res://death.tscn")
+const LOADER:PackedScene = preload("uid://cqn5d0qqqd173")
 
 @export var dia:DialogueResource
 @onready var lbl:DialogueLabel = $Control/VBoxContainer/PanelContainer/HBoxContainer/DialogueLabel
@@ -23,8 +24,17 @@ static var flags:Array[String] = []
 @export var center_pos:Marker3D
 @export var kev_pos:Marker3D
 @export var date_pos:Marker3D
+@export var date_pos2:Marker3D
+@export var date_pos3:Marker3D
 @export var othername:String
+@export var othername2:String
+@export var othername3:String
 @export var attacks:Dictionary[String, PackedScene]
+
+
+@export var winscene:LevelData
+@export var failscene:LevelData
+
 
 var running := true
 var hp:float = 43.81648:
@@ -92,6 +102,12 @@ func _ready() -> void:
 			othername:
 				camlpos = date_pos.global_position
 				camlrot = date_pos.global_rotation
+			othername2:
+				camlpos = date_pos2.global_position
+				camlrot = date_pos2.global_rotation
+			othername3:
+				camlpos = date_pos3.global_position
+				camlrot = date_pos3.global_rotation
 			"Kevin":
 				camlpos = kev_pos.global_position
 				camlrot = kev_pos.global_rotation
@@ -123,7 +139,9 @@ func _ready() -> void:
 			await _a
 			nextico.hide()
 	print("done")
-
+	Loader.next = winscene
+	get_tree().change_scene_to_packed(LOADER)
+	
 
 func _on_texture_button_pressed() -> void:
 	_r.emit("flirt")

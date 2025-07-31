@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b3rbo4jv1dcof"
+path="res://.godot/imported/planehydra.dialogue-6eb2c73aa1a9e2bcb19acec65ecb1abf.tres"
+
+[deps]
+
+source_file="res://dates/planehydra.dialogue"
+dest_files=["res://.godot/imported/planehydra.dialogue-6eb2c73aa1a9e2bcb19acec65ecb1abf.tres"]
+
+[params]
+
+defaults=true

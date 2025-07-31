@@ -75,7 +75,7 @@ Down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dia/strdate/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dia/strdate/test.dialogue", "res://dates/planehydra.dialogue")
 
 [layer_names]
 

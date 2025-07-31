@@ -1,0 +1,29 @@
+~ start
+*: Dating! Start!!!!!!!
+*: An airplane hydra stands before you.
+- Flirt
+	Kevin: Eyyyy bbg(s) why don't you fly me to ur place ;)
+	Fairing: wuhhh?
+	Afterburner: ...huh?
+	Aileron: Do we... know you?
+	- Flirt
+		Kevin: No but I'm sure you want to >3>
+		Aileron: ew get away from us
+		!attk1
+		*: The three of them seem angry...
+	- Idk
+- Idk
+	Kevin: So like... what are you doing out here?
+	Fairing: Oh we just flew in from out of town :)
+	Aileron: Yeah!!! Seemed like a fun place to land~
+	Afterburner: I saw a cool bug!!!!
+	- Flirt
+		Kevin: Woaw neat
+		Kevin: You look cool too ;)
+		Fairing: wuh o///o
+		Aileron: Oh~?
+		Afterburner: Ur very purple
+		Afterburner: I like purple;;;
+	- Idk
+		
+=> END
