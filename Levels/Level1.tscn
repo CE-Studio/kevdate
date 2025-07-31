@@ -1,17 +1,56 @@
-[gd_scene load_steps=9 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=15 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
+[ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_xcayt"]
+[ext_resource type="Texture2D" uid="uid://sit2r3vmxoga" path="res://sprites/BGHills.png" id="2_5g41i"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="2_fhqol"]
 [ext_resource type="PackedScene" uid="uid://cwie4au2eojrg" path="res://gear.tscn" id="3_fhqol"]
+[ext_resource type="Texture2D" uid="uid://l3sehui5v6on" path="res://sprites/ControlSigns.png" id="4_7fl83"]
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="4_iotdp"]
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="5_nutv8"]
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="6_05pb0"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5226"]
+atlas = ExtResource("4_7fl83")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuji2"]
+atlas = ExtResource("4_7fl83")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5cpa"]
+atlas = ExtResource("4_7fl83")
+region = Rect2(256, 0, 128, 128)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c63a0"]
 normal = Vector2(1, 0)
 
 [node name="Level1" type="Node2D"]
+
+[node name="ParallaxLayers" type="Node2D" parent="."]
+
+[node name="Sky" type="Parallax2D" parent="ParallaxLayers"]
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(2048, 2048)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayers/Sky"]
+texture_filter = 1
+position = Vector2(3328, -240)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xcayt")
+
+[node name="Hills" type="Parallax2D" parent="ParallaxLayers"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(2048, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayers/Hills"]
+texture_filter = 1
+position = Vector2(3328, 344)
+scale = Vector2(4, 4)
+texture = ExtResource("2_5g41i")
 
 [node name="Back" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -24,6 +63,24 @@ texture_filter = 1
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AABPAAMAAQAAAAMAAABPAAQAAQAAAAMAAABPAAUAAQAAAAMAAABPAAYAAQAAAAMAAABPAAcAAQAAAAMAAABVAAMAAQACAAMAAABVAAQAAQACAAMAAABVAAUAAQACAAMAAABVAAYAAQACAAMAAABVAAcAAQACAAMAAABVAAgAAQACAAMAAACPAPT/AQACAAMAAACPAPX/AQACAAMAAACPAPb/AQACAAMAAACPAPf/AQACAAMAAACPAPj/AQACAAMAAACPAPn/AQACAAMAAACPAPr/AQACAAMAAACPAPv/AQACAAMAAACPAPz/AQACAAMAAACPAP3/AQACAAMAAACPAP7/AQACAAMAAAA=")
 tile_set = ExtResource("1_3anf8")
+
+[node name="Sign1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, -248)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_p5226")
+
+[node name="Sign2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3136, -240)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_tuji2")
+
+[node name="Sign3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7592, -752)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_f5cpa")
 
 [node name="Main" type="TileMapLayer" parent="."]
 texture_filter = 1

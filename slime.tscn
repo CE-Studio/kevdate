@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ddg0qsanuw77n" path="res://scripts/PlatformTypes/slimeblock.gd" id="1_5jc4t"]
 [ext_resource type="AudioStream" uid="uid://cvlwlalxcedh5" path="res://sfx/Slime.wav" id="3_4l1t8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jc4t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l1t8"]
 size = Vector2(128, 128)
 
 [node name="Slime" type="AnimatableBody2D"]
@@ -13,7 +13,7 @@ collision_mask = 2
 script = ExtResource("1_5jc4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5jc4t")
+shape = SubResource("RectangleShape2D_4l1t8")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.1, 1.1)
@@ -21,7 +21,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_5jc4t")
+shape = SubResource("RectangleShape2D_4l1t8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
