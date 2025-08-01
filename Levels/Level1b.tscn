@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dybaync56l47p"]
+[gd_scene load_steps=14 format=4 uid="uid://dybaync56l47p"]
 
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_lkw24"]
 [ext_resource type="Texture2D" uid="uid://sit2r3vmxoga" path="res://sprites/BGHills.png" id="2_p5hn6"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dabkiao3622kd" path="res://slime_fan.tscn" id="6_p5hn6"]
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="7_nb8dl"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="8_nb8dl"]
+[ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="11_w58g5"]
 
 [sub_resource type="GDScript" id="GDScript_nb8dl"]
 resource_name = "Set1BSpawn"
@@ -554,3 +555,6 @@ rotation = -0.785397
 
 [node name="SlimeFan31" parent="PlatformGroup" instance=ExtResource("6_p5hn6")]
 position = Vector2(45440, 2048)
+
+[node name="DeathBarrier" parent="." instance=ExtResource("11_w58g5")]
+position = Vector2(24184, 3320)
