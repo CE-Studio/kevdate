@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbgsqthlxu6sp"]
+
+[ext_resource type="Script" uid="uid://bj1ksrw4qpux0" path="res://scripts/finish_line.gd" id="1_yfpjd"]
+[ext_resource type="Texture2D" uid="uid://ch3amqnh0vlmj" path="res://sprites/Finish.png" id="2_cj6i3"]
+
+[node name="FinishLine" type="Node2D"]
+script = ExtResource("1_yfpjd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(64, 64)
+texture = ExtResource("2_cj6i3")
+region_enabled = true
+region_rect = Rect2(0, 0, 2, 128)
