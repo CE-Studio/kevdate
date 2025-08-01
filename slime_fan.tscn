@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://dabkiao3622kd"]
+
+[ext_resource type="Texture2D" uid="uid://bfyf8a151o6a7" path="res://sprites/SlimeFan.png" id="1_gi1io"]
+[ext_resource type="Script" uid="uid://cak52kkgh1ymk" path="res://scripts/PlatformTypes/slimefan.gd" id="1_k061q"]
+[ext_resource type="Texture2D" uid="uid://b37qxi6ikfxph" path="res://sprites/FanParticle.png" id="2_k061q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k061q"]
+size = Vector2(512, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwsy8"]
+size = Vector2(448, 1280)
+
+[sub_resource type="Gradient" id="Gradient_hpo1g"]
+offsets = PackedFloat32Array(0.626667, 1)
+colors = PackedColorArray(1, 1, 1, 0.666667, 1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vgl7"]
+atlas = ExtResource("1_gi1io")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k061q"]
+atlas = ExtResource("1_gi1io")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwsy8"]
+atlas = ExtResource("1_gi1io")
+region = Rect2(0, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpo1g"]
+atlas = ExtResource("1_gi1io")
+region = Rect2(0, 192, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohgpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vgl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k061q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwsy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpo1g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="SlimeFan" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_k061q")
+metadata/_custom_type_script = "uid://inrh2yypftde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k061q")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -768)
+collision_layer = 0
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fwsy8")
+debug_color = Color(0.531978, 0.909013, 1, 0.42)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(4, 4)
+amount = 32
+texture = ExtResource("2_k061q")
+lifetime = 0.5
+randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(42, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 494.95
+initial_velocity_max = 848.49
+angular_velocity_min = -203.64
+angular_velocity_max = 203.64
+scale_amount_min = 0.8
+scale_amount_max = 1.25
+color_ramp = SubResource("Gradient_hpo1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ohgpj")
+autoplay = "default"
+frame_progress = 0.443403
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_enter"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exit"]
