@@ -7,3 +7,4 @@ signal done
 
 func end() -> void:
 	done.emit()
+	queue_free()

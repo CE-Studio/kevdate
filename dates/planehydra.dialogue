@@ -11,6 +11,21 @@
 		Aileron: ew get away from us
 		!attk1
 		*: The three of them seem angry...
+		- Flirt
+			Kevin: Spicccyyyy~ I like that~
+			=> urfucked
+		- Idk
+			Kevin: woah woah hey calm down no need to get physical
+			Aileron: Really? Why not? >:(
+			- Flirt
+				Kevin: bcuz then youd miss out on all this~
+				=> urfucked
+			- Idk
+				Kevin: look im really sorry ok
+				Kevin: let's start over loike this didn't happen
+				Aileron: ...
+				Fairing: ...okay
+				=> start
 	- Idk
 - Idk
 	Kevin: So like... what are you doing out here?
@@ -25,5 +40,11 @@
 		Afterburner: Ur very purple
 		Afterburner: I like purple;;;
 	- Idk
-		
+~ urfucked
+Fairing: ...
+Aileron: ...
+Afterburner: Woaw the two of them wanna kill you
+!attk2
+*: This isn't good
+!failure
 => END

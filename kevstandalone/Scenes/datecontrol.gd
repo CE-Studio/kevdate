@@ -81,6 +81,10 @@ func _ready() -> void:
 			$"../arrows".hide()
 			show()
 			continue
+		if line.text == "!failure":
+			Loader.next = failscene
+			get_tree().change_scene_to_packed(LOADER)
+			return
 		if "!flags" in  line.text:
 			var a = line.text.split("", false)
 			a.remove_at(0)
@@ -119,6 +123,8 @@ func _ready() -> void:
 		await lbl.finished_typing
 		if line.responses:
 			bcon.modulate = bcol
+			for i:TextureButton in bcon.get_children():
+				i.release_focus()
 			var r:String = "item"
 			while r == "item":
 				r = await _r

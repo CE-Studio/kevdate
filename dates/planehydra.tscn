@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://8fjm2s2t7nit"]
+[gd_scene load_steps=104 format=4 uid="uid://8fjm2s2t7nit"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_csvv7"]
 [ext_resource type="Texture2D" uid="uid://cv5quhfi1fnne" path="res://ph/placeholderheyes.png" id="2_onwyd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bitvj420twhui" path="res://ph/phsmile.png" id="6_1pl0b"]
 [ext_resource type="Resource" uid="uid://b3rbo4jv1dcof" path="res://dates/planehydra.dialogue" id="7_m8xrc"]
 [ext_resource type="PackedScene" uid="uid://c2p5uedwlxwvs" path="res://Enemies/attacks/ph0.tscn" id="8_0vybe"]
+[ext_resource type="PackedScene" uid="uid://bp1m275eew2xn" path="res://Enemies/attacks/ph1.tscn" id="9_v6a1w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4n7m"]
 albedo_texture = ExtResource("3_m8xrc")
@@ -2685,7 +2686,8 @@ othername = "Fairing"
 othername2 = "Afterburner"
 othername3 = "Aileron"
 attacks = Dictionary[String, PackedScene]({
-"!attk1": ExtResource("8_0vybe")
+"!attk1": ExtResource("8_0vybe"),
+"!attk2": ExtResource("9_v6a1w")
 })
 
 [editable path="kevin/Player/player"]
