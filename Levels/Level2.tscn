@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dyn6snc68tcm1"]
+[gd_scene load_steps=9 format=4 uid="uid://dyn6snc68tcm1"]
 
 [ext_resource type="Texture2D" uid="uid://ccp8avgux12hs" path="res://sprites/Skybox2.png" id="1_v115i"]
 [ext_resource type="Texture2D" uid="uid://djhfuyu0p56bh" path="res://sprites/BGMountains.png" id="2_jglcl"]
 [ext_resource type="TileSet" uid="uid://byl2cpxw2yxd0" path="res://Tilemap2.tres" id="3_w0h0a"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="4_m3ha0"]
 [ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="5_vd23k"]
+[ext_resource type="PackedScene" uid="uid://bus3y12vem751" path="res://ice.tscn" id="6_jglcl"]
 
 [sub_resource type="GDScript" id="GDScript_mocdr"]
 resource_name = "L2SetRespawn"
@@ -78,3 +79,14 @@ shape = SubResource("WorldBoundaryShape2D_x7rwe")
 
 [node name="DeathBarrier" parent="." instance=ExtResource("5_vd23k")]
 position = Vector2(13376, 2192)
+
+[node name="GearGroup" type="Node2D" parent="."]
+
+[node name="TriggerGroup" type="Node2D" parent="."]
+
+[node name="EnemyGroup" type="Node2D" parent="."]
+
+[node name="PlatformGroup" type="Node2D" parent="."]
+
+[node name="Ice" parent="PlatformGroup" instance=ExtResource("6_jglcl")]
+position = Vector2(1792, -64)
