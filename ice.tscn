@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bus3y12vem751"]
+
+[ext_resource type="Script" uid="uid://inrh2yypftde" path="res://scripts/platform.gd" id="1_lryxu"]
+[ext_resource type="Texture2D" uid="uid://8deyiwwpt8l1" path="res://sprites/Conveyor.png" id="2_3inoc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wc2py"]
+friction = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbg4a"]
+size = Vector2(768, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfd7d"]
+atlas = ExtResource("2_3inoc")
+region = Rect2(0, 192, 0, 32)
+
+[node name="Ice" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_wc2py")
+script = ExtResource("1_lryxu")
+metadata/_custom_type_script = "uid://inrh2yypftde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tbg4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_tfd7d")
