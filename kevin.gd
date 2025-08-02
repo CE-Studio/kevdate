@@ -9,6 +9,8 @@ const SPEED := 1500.0          # Max ground speed
 const ACCELERATION := 0.25      # How quickly player accelerates on ground
 const FRICTION := 0.2          # How quickly player decelerates on ground
 
+const FRICTION_ICE := 0.002
+
 const JUMP_VELOCITY := -2000.0   # Initial upward velocity for jump
 const JUMP_GRAVITY_MULTIPLIER := 0.5 # Less gravity during ascending jump (for variable jump height)
 
@@ -177,8 +179,8 @@ class Walk extends PlayerState:
 			player.state_machine.switch_state("Dash")
 		
 	func physics(delta: float) -> void:
-
-		_common_horizontal_movement(delta, player.SPEED, player.ACCELERATION, player.FRICTION)
+		var this_friction = player.FRICTION_ICE if player.on_ice else player.FRICTION
+		_common_horizontal_movement(delta, player.SPEED, player.ACCELERATION, this_friction)
 		super(delta)
 
 # Jump State
