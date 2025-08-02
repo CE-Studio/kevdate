@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://8fjm2s2t7nit"]
+[gd_scene load_steps=109 format=4 uid="uid://8fjm2s2t7nit"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_csvv7"]
 [ext_resource type="Texture2D" uid="uid://cv5quhfi1fnne" path="res://ph/placeholderheyes.png" id="2_onwyd"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c2p5uedwlxwvs" path="res://Enemies/attacks/ph0.tscn" id="8_0vybe"]
 [ext_resource type="PackedScene" uid="uid://bp1m275eew2xn" path="res://Enemies/attacks/ph1.tscn" id="9_v6a1w"]
 [ext_resource type="Script" uid="uid://ihfc5l7350sl" path="res://loader/leveldata.gd" id="10_1pl0b"]
+[ext_resource type="PackedScene" uid="uid://diyci0q3ntefx" path="res://Enemies/attacks/ph2.tscn" id="10_calmy"]
+[ext_resource type="PackedScene" uid="uid://mwgx3mx6w5tu" path="res://Enemies/attacks/ph3.tscn" id="11_na5ou"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4n7m"]
 albedo_texture = ExtResource("3_m8xrc")
@@ -2229,6 +2231,14 @@ scenepath = "uid://dybaync56l47p"
 level_meta = Dictionary[StringName, Variant]({})
 metadata/_custom_type_script = "uid://ihfc5l7350sl"
 
+[sub_resource type="Resource" id="Resource_1pl0b"]
+script = ExtResource("10_1pl0b")
+title = &"1c"
+subtitle = &"oh no"
+scenepath = "uid://crd8j6mqqqbm3"
+level_meta = Dictionary[StringName, Variant]({})
+metadata/_custom_type_script = "uid://ihfc5l7350sl"
+
 [node name="Node3D" instance=ExtResource("1_csvv7")]
 
 [node name="planehydra" type="Node3D" parent="date" index="0"]
@@ -2696,8 +2706,11 @@ othername2 = "Afterburner"
 othername3 = "Aileron"
 attacks = Dictionary[String, PackedScene]({
 "!attk1": ExtResource("8_0vybe"),
-"!attk2": ExtResource("9_v6a1w")
+"!attk2": ExtResource("9_v6a1w"),
+"!attk3": ExtResource("10_calmy"),
+"!attk4": ExtResource("11_na5ou")
 })
 winscene = SubResource("Resource_calmy")
+failscene = SubResource("Resource_1pl0b")
 
 [editable path="kevin/Player/player"]
