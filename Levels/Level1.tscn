@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=22 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_xcayt"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="6_05pb0"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
 [ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="11_p5226"]
+[ext_resource type="Texture2D" uid="uid://cfqqdlyb1k0d" path="res://sprites/ph.png" id="12_tuji2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5226"]
 atlas = ExtResource("4_7fl83")
@@ -27,7 +28,62 @@ region = Rect2(256, 0, 128, 128)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c63a0"]
 normal = Vector2(1, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_104vp"]
+atlas = ExtResource("12_tuji2")
+region = Rect2(0, 0, 460, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3momc"]
+atlas = ExtResource("12_tuji2")
+region = Rect2(460, 0, 460, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbm5j"]
+atlas = ExtResource("12_tuji2")
+region = Rect2(0, 360, 460, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2sgf"]
+atlas = ExtResource("12_tuji2")
+region = Rect2(460, 360, 460, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufevr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_104vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3momc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_104vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbm5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_104vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2sgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_104vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3momc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_104vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3momc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
 [node name="Level1" type="Node2D"]
+texture_filter = 1
 
 [node name="ParallaxLayers" type="Node2D" parent="."]
 
@@ -491,3 +547,9 @@ height = 4
 
 [node name="DeathBarrier" parent="." instance=ExtResource("11_p5226")]
 position = Vector2(13376, 2192)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(29472, -3214)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ufevr")
+frame_progress = 0.789924
