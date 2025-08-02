@@ -2225,7 +2225,7 @@ albedo_texture = SubResource("ViewportTexture_33xqh")
 script = ExtResource("10_1pl0b")
 title = &"1b"
 subtitle = &"the one with the fans and stuff"
-scenepath = "uid://d236ui2v85c30"
+scenepath = "uid://dybaync56l47p"
 level_meta = Dictionary[StringName, Variant]({})
 metadata/_custom_type_script = "uid://ihfc5l7350sl"
 
@@ -2561,7 +2561,7 @@ mesh = SubResource("ArrayMesh_pemr8")
 skeleton = NodePath("")
 
 [node name="BoneAttachment3D2" type="BoneAttachment3D" parent="date/planehydra/Skeleton3D" index="2"]
-transform = Transform3D(1, 1.32161e-12, 2.38419e-07, -2.36492e-07, -0.126872, 0.991919, 3.025e-08, -0.991919, -0.126872, 2.81235e-12, 0.312943, -2.65461)
+transform = Transform3D(1, 1.32161e-12, 2.38419e-07, -2.36492e-07, -0.126872, 0.991919, 3.025e-08, -0.991919, -0.126872, 2.85139e-12, 0.312943, -2.65461)
 bone_name = "tail.005"
 bone_idx = 24
 
@@ -2673,7 +2673,7 @@ transform = Transform3D(0.233442, 0, 0.972371, 0, 1, 0, -0.972371, 0, 0.233442, 
 surface_material_override/0 = SubResource("StandardMaterial3D_hgqel")
 
 [node name="BoneAttachment3D" parent="kevin/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, 2.56114e-09, 0.998767, 0.843557, 1.63555, 0.0128214)
+transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, -9.31323e-10, 0.998767, 0.843557, 1.63555, 0.0128214)
 
 [node name="dpos" parent="." index="6"]
 transform = Transform3D(-0.370546, -0.366641, 0.853388, 0, 0.918793, 0.39474, -0.928814, 0.14627, -0.340455, -0.308464, 2.53051, -2.22314)
