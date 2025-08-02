@@ -317,6 +317,21 @@ position = Vector2(2112, -256)
 [node name="Gear5" parent="GearGroup" instance=ExtResource("3_fhqol")]
 position = Vector2(2304, -256)
 
+[node name="Gear71" parent="GearGroup" instance=ExtResource("3_fhqol")]
+position = Vector2(27328, -3072)
+
+[node name="Gear72" parent="GearGroup" instance=ExtResource("3_fhqol")]
+position = Vector2(27520, -3072)
+
+[node name="Gear73" parent="GearGroup" instance=ExtResource("3_fhqol")]
+position = Vector2(27712, -3072)
+
+[node name="Gear74" parent="GearGroup" instance=ExtResource("3_fhqol")]
+position = Vector2(27904, -3072)
+
+[node name="Gear75" parent="GearGroup" instance=ExtResource("3_fhqol")]
+position = Vector2(28096, -3072)
+
 [node name="TriggerGroup" type="Node2D" parent="."]
 
 [node name="CamTrigger" parent="TriggerGroup" instance=ExtResource("4_iotdp")]
