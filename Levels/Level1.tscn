@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=16 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_xcayt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="5_nutv8"]
 [ext_resource type="PackedScene" uid="uid://ngxwbkp2fywc" path="res://slime.tscn" id="6_05pb0"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
+[ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="11_p5226"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5226"]
 atlas = ExtResource("4_7fl83")
@@ -472,3 +473,6 @@ height = 4
 position = Vector2(21120, -2176)
 width = 8
 height = 4
+
+[node name="DeathBarrier" parent="." instance=ExtResource("11_p5226")]
+position = Vector2(13376, 2192)

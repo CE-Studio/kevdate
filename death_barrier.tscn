@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3i5a0317b4k"]
+
+[ext_resource type="Script" uid="uid://c8m17a74o1l7r" path="res://scripts/death_barrier.gd" id="1_hl5rk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hl5rk"]
+size = Vector2(205408, 5264)
+
+[node name="DeathBarrier" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hl5rk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2632)
+shape = SubResource("RectangleShape2D_hl5rk")
+
+[connection signal="body_entered" from="." to="." method="_on_player_enter"]
