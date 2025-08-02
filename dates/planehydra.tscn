@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://8fjm2s2t7nit"]
+[gd_scene load_steps=106 format=4 uid="uid://8fjm2s2t7nit"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_csvv7"]
 [ext_resource type="Texture2D" uid="uid://cv5quhfi1fnne" path="res://ph/placeholderheyes.png" id="2_onwyd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://b3rbo4jv1dcof" path="res://dates/planehydra.dialogue" id="7_m8xrc"]
 [ext_resource type="PackedScene" uid="uid://c2p5uedwlxwvs" path="res://Enemies/attacks/ph0.tscn" id="8_0vybe"]
 [ext_resource type="PackedScene" uid="uid://bp1m275eew2xn" path="res://Enemies/attacks/ph1.tscn" id="9_v6a1w"]
+[ext_resource type="Script" uid="uid://ihfc5l7350sl" path="res://loader/leveldata.gd" id="10_1pl0b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4n7m"]
 albedo_texture = ExtResource("3_m8xrc")
@@ -2220,6 +2221,14 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_33xqh")
 
+[sub_resource type="Resource" id="Resource_calmy"]
+script = ExtResource("10_1pl0b")
+title = &"1b"
+subtitle = &"the one with the fans and stuff"
+scenepath = "uid://d236ui2v85c30"
+level_meta = Dictionary[StringName, Variant]({})
+metadata/_custom_type_script = "uid://ihfc5l7350sl"
+
 [node name="Node3D" instance=ExtResource("1_csvv7")]
 
 [node name="planehydra" type="Node3D" parent="date" index="0"]
@@ -2689,5 +2698,6 @@ attacks = Dictionary[String, PackedScene]({
 "!attk1": ExtResource("8_0vybe"),
 "!attk2": ExtResource("9_v6a1w")
 })
+winscene = SubResource("Resource_calmy")
 
 [editable path="kevin/Player/player"]

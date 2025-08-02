@@ -1,15 +1,15 @@
-[gd_scene load_steps=13 format=4 uid="uid://dybaync56l47p"]
+[gd_scene load_steps=13 format=4 uid="uid://d236ui2v85c30"]
 
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_lkw24"]
 [ext_resource type="Texture2D" uid="uid://sit2r3vmxoga" path="res://sprites/BGHills.png" id="2_p5hn6"]
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="3_cb8xl"]
-[ext_resource type="PackedScene" uid="uid://cbgsqthlxu6sp" path="res://finish_line.tscn" id="3_wemap"]
+[ext_resource type="PackedScene" path="res://finish_line.tscn" id="3_wemap"]
 [ext_resource type="PackedScene" uid="uid://uvcn65h66alb" path="res://kevin.tscn" id="4_4xpph"]
 [ext_resource type="PackedScene" uid="uid://cwie4au2eojrg" path="res://gear.tscn" id="5_nb8dl"]
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="6_4xpph"]
-[ext_resource type="PackedScene" uid="uid://dabkiao3622kd" path="res://slime_fan.tscn" id="6_p5hn6"]
+[ext_resource type="PackedScene" path="res://slime_fan.tscn" id="6_p5hn6"]
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="7_nb8dl"]
-[ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="8_nb8dl"]
+[ext_resource type="PackedScene" path="res://Enemies/enemy_flying.tscn" id="8_nb8dl"]
 
 [sub_resource type="GDScript" id="GDScript_nb8dl"]
 resource_name = "Set1BSpawn"

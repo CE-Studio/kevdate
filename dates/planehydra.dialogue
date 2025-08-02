@@ -8,6 +8,7 @@
 	Aileron: Do we... know you?
 	- Flirt
 		Kevin: No but I'm sure you want to >3>
+		~ back1
 		Aileron: ew get away from us
 		!attk1
 		*: The three of them seem angry...
@@ -27,7 +28,31 @@
 				Fairing: ...okay
 				=> start
 	- Idk
+		Kevin: ...No
+		Fairing: ...So like... what do you want from us, exactly...?
+		Kevin: Uhhh...
+		- Flirt
+			Kevin: Yourselves, duh ;)
+			Fairing: ...[i]What[/i]
+			=> back1
+		- Idk
+			Kevin: idk I just kinda wanted to talk I guess
+			Fairing: And you did that by... trying to flirt with us????
+			- Flirt
+				Kevin: yea is it working~? ;)
+				=> back1
+			- Idk
+				Kevin: I, uhhh...
+				Kevin: ...Yeahhh?
+				Fairing: ...
+				Aileron: ...
+				Afterburner: You are the exact opposite of smooth!
+				*: The airplane hydra felt awkward and left
+				*: You Lost! You big failutre!!! You suck at this hugely bigtime lmao!!!
+				*: You lost 13.8e2 slef esteem points lol lmao lol fck yuo
+				!failure
 - Idk
+	~ forw1
 	Kevin: So like... what are you doing out here?
 	Fairing: Oh we just flew in from out of town :)
 	Aileron: Yeah!!! Seemed like a fun place to land~
@@ -39,12 +64,136 @@
 		Aileron: Oh~?
 		Afterburner: Ur very purple
 		Afterburner: I like purple;;;
+		- Flirt
+			Kevin: Yeah I love the whole cyborg dragon airplane thing you have going on
+			Aileron: Yeahhh!! Our parents were a reagular hydra and an airtanker!
+			Fairing: So that's how that happened. We hatched like this!
+			- Flirt
+				Kevin: Clearly you got ur cuteness from both of 'em >w>
+				Aileron: Heh, you're starting to sound a lot like Our boyfried Kyan~ You up to something~?
+				*: **record scratch**
+				*: Her WHAT???
+				- Flirt
+					Kevin: forget about him, I can be sooooo much better hehe~ >3>
+					=> urfucked
+				- Idk
+					Kevin: You... have a boyfriend already?
+					Aileron: Yeah we have two actually
+					=> almostscore
+			- Idk
+				Kevin: ...
+				Kevin: ...so like... how does that even... work, exactly?
+				Aileron: ...huh?
+				Kevin: ...yknow, a hydra, and an airplane
+				Kevin: one's a living thing and one's a machine
+				Kevin: How exactly do they... yknow
+				Fairing: ...
+				Kevin: ...
+				Aileron: ...
+				Kevin: ...sorry, I made this awkward
+				Kevin: I'm... just gonna...
+				*: You run away in embarrasment after asking your date about her parent's sex life! Very smooth, Kevin!
+				*: You lose! You lost 12 dingnity points and gained 1 I Am Very Good At Dating And Know Exactly What I'm Doing point!
+				*: This moment will replay in your dreams for the rest of your life!
+				!failure
+		- Idk
+			Kevin: You're very uhh
+			Kevin: I'd say light blue but I think this pixel shader and/or lighting and/ore tonemapping is washing you out to just white
+			Fairing: ...I think our fur is more of a light grey, actually?
+			Aileron: Idk there is a *twinge* of blue
+			Afterburner: Nuh uh! If you look in the game files our texture is colored #DDDDDD! That's very light grey!
+			*: They start to bicker about their coloration. You try to edge away, but they seem to follow (even though they keep arguing)
+			*: I guess you're... at least friends now?
+			*: You win?? And gain a +1 friendship bonus???
+			=> END
 	- Idk
+		Kevin: Bugs r neat
+		Kevin: Did you know I had an infinite dash chain momentum bug in my first game?
+		Afterburner: ...
+		Afterburner: that one wasn't a bug it was intentional >:(
+		Kevin: ...
+		Kevin: ...okay well uhh
+		- Flirt
+			Kevin: I'll find another one, just for you >w>
+			Afterburner: Oh! Oh! Find one that's blue! And half dragon! >//w//<
+			Aileron: You mean like our boyfriend Kyan, huh Aft~? 
+			*: **record scratch**
+			*: Her WHAT???
+			- Flirt
+				Kevin: forget about him, I can be sooooo much better hehe~ >3>
+				=> urfucked
+			- Idk
+				Kevin: You... have a boyfriend already?
+				Aileron: Yeah we have two actu-- wait, were you trying to hit on us????
+				~ almostscore
+				Fairing: I mean... we *ARE* poly
+				Fairing: That kinda comes with the territory, having three heads and all...
+				Afterburner: You two have Ky and snakeboy! I claim this one! He's mine!!
+				Fairing: Wait-- That's not--
+				Aileron: oh come on, like you don't hog all the snuggles from the wickernaga, Fairing :P
+				Fairing: b-But we--
+				Afterburner: He's mine! MINE! MUAAAHAHAHAHA!
+				*: The hydra is bickering amogst herself (herselves? idk) about the nature of her relationships
+				*: Seems like you've already snagged Afterburner. Now's your chance to convince the other two! (Or back out, she seems at least 33.3% crazy. Up to you really)
+				- Flirt
+					Kevin: Hey now, I'm fine with being shared! a-And with the other two!
+					Kevin: m-More the merrier, right???
+					Afterburner: Yeah!!!
+					Fairing: Yeah, we could try it out.
+					Aileron: Dinner, after whatever you're doing?
+					*: You Win!
+					*: You earned a cool mechanic in the second half of the level because her jet engines melted all the slime! Yippe!
+					=> END
+				- Idk
+					Kevin: ...I'm... just gonna... go over here and...
+					*: You run away and kinda lose but not really but for the purposes of this videogame it's a failure from a progression and game logic perspective and the second half of this level will now be harder!
+					*: You earn 3 confusion points! And a neat rock you find on the ground while running!
+					!failure
+		- Idk
+			Kevin: That's
+			Kevin: Well
+			Kevin: You see
+			Kevin: uhhh
+			Kevin: The devs still called it a bug???
+			Fairing: ...but bugs are unintentional
+			Kevin: look I wasn't the one who actually decided to call it a bug ok
+			Afterburner: ...
+			Afterburner: Can we leave? This guy is starting to weird me out.
+			Aileron: Yeah
+			Fairing: Yeah
+			*: The hydra flies off, leaving you brokenhearted.
+			*: Maaaaan, you knew you should have told her you'd find her a bug instead.
+			*: You lose! But win 1 sadness point! Yay yippe woohoo!
+			!failure
 ~ urfucked
 Fairing: ...
 Aileron: ...
 Afterburner: Woaw the two of them wanna kill you
 !attk2
 *: This isn't good
+- Flirt
+	Kevin: You--
+	Aileron: [i]*Grrrr*[/i]
+- Idk
+	Kevin: hey hey com on we can--
+	Aileron: [i]*Grrrr*[/i]
+!attk3
+*: This isn't salvagable
+- Flirt
+	Kevin: ur attack patterns are sooo hot
+	Kevin: ...literally actually I think I'm getting burnt by jet exaust owww
+	Aileron: [i]*Hisssssss*[/i]
+- Idk
+	Kevin: okay maybe this is my queue to duck out of here
+	Fairing: You think???? Get lost already!!!
+	*: You ran away (and lost)
+	*: You lost 45 dating experience points (and gained 1 shouldn't have taken this far points)
+	*: The date is over (for real)
+	!failure
+!attk4
+Aileron: Fuck this, we're leaving
+*: Wwow you made all the wrong shoices you possibly could have (probably, there's actually like 4 routes to get here)
+*: You megasuck at dating!!
+*: You lost 3 good person points and aslo lost in general also!!!
 !failure
 => END
