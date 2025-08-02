@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bus3y12vem751"]
+
+[ext_resource type="Script" uid="uid://drltm7fwvfccx" path="res://scripts/PlatformTypes/Ice.gd" id="1_lryxu"]
+[ext_resource type="Texture2D" uid="uid://8deyiwwpt8l1" path="res://sprites/Conveyor.png" id="2_3inoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbg4a"]
+size = Vector2(768, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfd7d"]
+atlas = ExtResource("2_3inoc")
+region = Rect2(0, 192, 0, 32)
+
+[node name="Ice" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_lryxu")
+metadata/_custom_type_script = "uid://inrh2yypftde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tbg4a")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tbg4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_tfd7d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_enter"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_player_exit"]

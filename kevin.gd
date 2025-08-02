@@ -35,6 +35,7 @@ static var gears:int = 0
 var last_nonzero_vel:Vector2 = Vector2.ZERO
 var last_true_vel:Vector2 = Vector2.ZERO
 var facing_left:bool = false
+var on_ice:bool = false
 
 var health:int = MAX_HEALTH
 var invul_time:float = 0.0
