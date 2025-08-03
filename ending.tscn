@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://2xfjm3eoddg2"]
+[gd_scene load_steps=5 format=3 uid="uid://2xfjm3eoddg2"]
 
 [ext_resource type="Texture2D" uid="uid://b7kkp5urxccdr" path="res://sprites/EndingBG.png" id="1_dmh3q"]
 [ext_resource type="Texture2D" uid="uid://b3i5vrb6lwd4c" path="res://sprites/Tileset.png" id="2_iggq8"]
 [ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="3_iggq8"]
+[ext_resource type="AudioStream" uid="uid://cs2y17atbbcbn" path="res://music/Title.wav" id="4_4jooh"]
 
 [node name="Ending" type="Node3D"]
 
@@ -56,3 +57,9 @@ EpsilonTheDerg
 Lasagna Bones
 Game concept, music composition, chaotic brain activity"
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4jooh")
+pitch_scale = 2.0
+autoplay = true
+bus = &"Music"

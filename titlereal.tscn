@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://yi7124yk37xw"]
+[gd_scene load_steps=6 format=3 uid="uid://yi7124yk37xw"]
 
 [ext_resource type="Script" uid="uid://dubpiduyosd41" path="res://scripts/title.gd" id="1_ubxjs"]
 [ext_resource type="Texture2D" uid="uid://ccsjlrjd0fgs5" path="res://sprites/CoverPic.png" id="1_wa0h2"]
 [ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_5k7ce"]
+[ext_resource type="AudioStream" uid="uid://cs2y17atbbcbn" path="res://music/Title.wav" id="4_5k7ce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xt7ni"]
 atlas = ExtResource("2_5k7ce")
@@ -37,3 +38,8 @@ grow_vertical = 0
 text = "Click literally anywhere to play idk
 or press any button idc"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5k7ce")
+autoplay = true
+bus = &"Music"
