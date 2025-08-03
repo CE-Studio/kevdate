@@ -1,25 +1,89 @@
 ~ start
 *: DATING! START!!!
-*: The train glares at you, silently.
-- Flirt
-	Kevin: woaw ur hot~
-	Strike: ...
-	=> sec1
-- Idk
-	*: You... pull out a mic...?
-	=> DANC
-~ DANC
 !spec
-Strike: Your vocal skills are... passable.
-!flags strikenotangy
-=> exit
-~ sec1
-*: Uh oh, she seems angry...
+*: The train glares at you, silently.
+- FLirt
+	Kevin: So... your schedule bring you to this stop often~?
+	Strike: ...
+	*: Uh 0h, she seems really angry. Already.
+	!attk2
+	Strike: ...You survived.
+	Strike: ...Impressive
+- Idk
+	*: A more subtle approach is probably best. She seems pretty intimidating.
+	Kevin: *clears throat*
+	Kevin: So, like--
+	Strike: If you think you can woo us, you must prove yourself worthy.
+	*: ...Nevermind, she already knows exactly what you're thiniking. Creepy. In a cool way tho (you hope)
+*: You need to prepare.
+- Flirt
+	Kevin: All right then, bring it~!
+	Strike: As you wish.
+- Idk
+	Kevin: ...w-Wait! I'm not ready yet!
+	Strike: Weakness will get you nowhere with us.
 !attk1
-Strike: I am not some... [i]showpeice[/i] to oggle.
-!flags strikeangy
-=> exit
-~ exit
-*: You survived!
-*: You got 0 XP, 3 XD, and 1 >w>;;
+if DateControl.hpmirr < 8.0
+	=> tooweak
+*: Strike gives a barely visible, but approving nod. She begins to ready her next attack.
+*: Press on, or chicken out?
+- Flirt
+	Kevin: That's all you got~? Cmon, I can take it~!
+	Strike: Hoping to endear us with your enthusiasm?
+	Strike: ...It's working.
+- Idk
+	Kevin: ...I... d-dont think I can...
+	Strike: ...
+	Strike: Hmph.
+	Strike: You are inadequate.
+	Strike: Oh well, not that we expected different.
+	*: With a whip of her tail, she turns and leaves.
+	*: You lose! On the plus side she was probably gonna kill you!
+	*: You lost $5 on your train ticket and gained a 15 minute delay on the next level due to track maintenance!
+	!failure
+!attk3
+if DateControl.hpmirr < 6.0
+	=> tooweak
+Strike: Your skills are starting to appear... impressive.
+Strike: But is it really a test of your strength if you do not fight back?
+*: Fight back with your smooth words, or your actions?
+- Flirt
+	Kevin: And risk shattering your beuatiful windscreen?
+	Kevin: No, I'll do something far stronger...
+	*: You strike a confident but seductive pose, ready do deliver your next line, and--
+	*: Your pose isn't guarded. She instantly sidesweeps your leg with her own, sending you tumbling to the ground in a faceplant.
+	Kevin: ...[i]ow[/i]
+	Strike: Those who oppose you will not wait to hear your monologue.
+	Strike: But... I we flattered by your words, even if you used them at the wrong time.
+	Strike: Your offensive skill is quite lacking, but your defensive has us intruiged enough to still desire to see where this goes.
+- Idk
+	*: You wind back and puch Strike in the stomach full force. There's a resounding thud as your fist strikes metal.
+	*: ...She barely reacts.
+	!heal
+	*: Somehow though it heals you to full health!
+!attk4
+Strike: To be our lover is to be our knight. Our protector in times of need. And us the same for you.
+Strike: Even if it requires training, you have potential.
+Strike: But to be sure, I have one final challenge you must comlete.
+- Flirt:
+	Kevin: Bring it~!
+- Idk:
+	Kevin: ...I'm ready
+Strike: Very well.
+*: She... pulls out a mic?
+!spec
+Strike: Your singing is as good as your defense.
+Strike: ...
+Strike: You are worthy.
+Strike: Meet me after you are done here. We will begin your training.
+*: You survived! And won! Probably!
+*: ...What exactly have you signed yourself up for, though...?
+*: Is it a good thing? Probably not! But at least you still won! And the repercussions will be left for the fanfic writers because whatever is in Kevin and Strike's future is wildly out of scope for this game!
+*: You earned 34723018 nervousness! Yay!
 => END
+~ tooweak
+Strike: ...
+Strike: Hmph. As I expected. Be glad you still stand.
+*: You lose! Your hp dropped too low! Maybe it's for the best, she was kinda scary (and mean)...
+*: You lost 5 Date Points but gained 23 Doged A Bullet(train) Points!
+!failure

@@ -34,12 +34,15 @@ static var flags:Array[String] = []
 
 @export var winscene:LevelData
 @export var failscene:LevelData
+@export var reloadstring:String = "res://leveldata/datestrike.tres"
 
 
 var running := true
+static var hpmirr:float = 43.81648
 var hp:float = 43.81648:
 	set(val):
 		hp = clampf(val, 0, 43.81648)
+		hpmirr = hp
 		$Control/VBoxContainer/HBoxContainer2/ProgressBar.value = hp
 		$Control/VBoxContainer/HBoxContainer2/Label.text = str(hp)
 		if hp == 0.0:
@@ -58,8 +61,9 @@ func  _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	hpmirr = hp
 	Player.gears += 1
-	UIHandler.load_scene = load("res://leveldata/datestrike.tres")
+	UIHandler.load_scene = load(reloadstring)
 	kevheart = $Control/fightbox/Control/Node2D/Sprite2D
 	bcon.modulate = boffcol
 	var line:DialogueLine
@@ -85,6 +89,9 @@ func _ready() -> void:
 			Loader.next = failscene
 			get_tree().change_scene_to_packed(LOADER)
 			return
+		if line.text == "!heal":
+			hp = 100
+			continue
 		if "!flags" in  line.text:
 			var a = line.text.split("", false)
 			a.remove_at(0)

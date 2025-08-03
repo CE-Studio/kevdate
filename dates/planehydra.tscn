@@ -2712,5 +2712,6 @@ attacks = Dictionary[String, PackedScene]({
 })
 winscene = SubResource("Resource_calmy")
 failscene = SubResource("Resource_1pl0b")
+reloadstring = "res://leveldata/dateph.tres"
 
 [editable path="kevin/Player/player"]
