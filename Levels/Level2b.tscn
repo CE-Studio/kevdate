@@ -133,13 +133,13 @@ position = Vector2(6144, -832)
 position = Vector2(10496, -1280)
 
 [node name="Gear13" parent="GearGroup" instance=ExtResource("6_iqdjd")]
-position = Vector2(8960, -1536)
+position = Vector2(8960, -1664)
 
 [node name="Gear14" parent="GearGroup" instance=ExtResource("6_iqdjd")]
 position = Vector2(11136, -2176)
 
 [node name="Gear15" parent="GearGroup" instance=ExtResource("6_iqdjd")]
-position = Vector2(8448, -2432)
+position = Vector2(8704, -2560)
 
 [node name="Gear16" parent="GearGroup" instance=ExtResource("6_iqdjd")]
 position = Vector2(13248, -2176)
@@ -256,6 +256,7 @@ position = Vector2(30784, -4160)
 position = Vector2(31040, -4160)
 
 [node name="TriggerGroup" type="Node2D" parent="."]
+visible = false
 
 [node name="CamTrigger" parent="TriggerGroup" instance=ExtResource("7_l8aiy")]
 position = Vector2(504.001, -432)
@@ -321,6 +322,7 @@ set_focus = true
 focus_point = Vector2(9928, -1704)
 
 [node name="EnemyGroup" type="Node2D" parent="."]
+visible = false
 
 [node name="EnemyBasic" parent="EnemyGroup" instance=ExtResource("8_mrlrm")]
 position = Vector2(6080, -448)
@@ -400,10 +402,10 @@ position = Vector2(24208, -752)
 position = Vector2(1536, 64)
 
 [node name="ConveyorR2" parent="PlatformGroup" instance=ExtResource("10_y7n86")]
-position = Vector2(8960, -1344)
+position = Vector2(8960, -1472)
 
 [node name="ConveyorR3" parent="PlatformGroup" instance=ExtResource("10_y7n86")]
-position = Vector2(8448, -2240)
+position = Vector2(8704, -2368)
 
 [node name="ConveyorR4" parent="PlatformGroup" instance=ExtResource("10_y7n86")]
 position = Vector2(17920, -704)
