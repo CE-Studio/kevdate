@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://buj1fykyo14ci"]
+
+[ext_resource type="Script" uid="uid://inrh2yypftde" path="res://scripts/platform.gd" id="1_llmfl"]
+[ext_resource type="Texture2D" uid="uid://8deyiwwpt8l1" path="res://sprites/Conveyor.png" id="2_bdhc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khg08"]
+size = Vector2(768, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llmfl"]
+atlas = ExtResource("2_bdhc3")
+region = Rect2(0, 96, 192, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhc3"]
+atlas = ExtResource("2_bdhc3")
+region = Rect2(0, 128, 192, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q58tv"]
+atlas = ExtResource("2_bdhc3")
+region = Rect2(0, 160, 192, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_el5vw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llmfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q58tv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="ConveyorL" type="AnimatableBody2D"]
+constant_linear_velocity = Vector2(-2000, 0)
+script = ExtResource("1_llmfl")
+metadata/_custom_type_script = "uid://inrh2yypftde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_khg08")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_el5vw")
+autoplay = "default"
+frame_progress = 0.642771

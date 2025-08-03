@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://ep8evws2l5md"]
+
+[ext_resource type="Script" uid="uid://ihfc5l7350sl" path="res://loader/leveldata.gd" id="1_uw07x"]
+
+[resource]
+script = ExtResource("1_uw07x")
+title = &"l2"
+subtitle = &"purple guy"
+scenepath = "uid://i8r764yga8cu"
+level_meta = Dictionary[StringName, Variant]({})
+metadata/_custom_type_script = "uid://ihfc5l7350sl"
