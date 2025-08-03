@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://47dolpq0honr"]
+[gd_scene load_steps=17 format=4 uid="uid://47dolpq0honr"]
 
 [ext_resource type="Texture2D" uid="uid://ccp8avgux12hs" path="res://sprites/Skybox2.png" id="1_ut5co"]
 [ext_resource type="Texture2D" uid="uid://djhfuyu0p56bh" path="res://sprites/BGMountains.png" id="2_y7n86"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="9_4ecqh"]
 [ext_resource type="PackedScene" uid="uid://bcf5720hhph7w" path="res://conveyor_r.tscn" id="10_y7n86"]
 [ext_resource type="PackedScene" uid="uid://buj1fykyo14ci" path="res://conveyor_l.tscn" id="11_ppn4f"]
+[ext_resource type="PackedScene" uid="uid://cc3un51mpgxv1" path="res://level_end.tscn" id="13_4d3pe"]
+[ext_resource type="AudioStream" uid="uid://bun7sh0bmtxqm" path="res://music/L2.wav" id="14_j75j0"]
 
 [sub_resource type="GDScript" id="GDScript_mocdr"]
 resource_name = "L2SetRespawn"
@@ -426,3 +428,14 @@ position = Vector2(28032, -1856)
 
 [node name="ConveyorL5" parent="PlatformGroup" instance=ExtResource("11_ppn4f")]
 position = Vector2(28544, -3008)
+
+[node name="LevelEnd" parent="." instance=ExtResource("13_4d3pe")]
+position = Vector2(32448, -4560)
+scale = Vector2(11.0136, 45.1628)
+load_scene = "uid://rdmcerxi16b8"
+play_win_jingle = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_j75j0")
+autoplay = true
+bus = &"Music"

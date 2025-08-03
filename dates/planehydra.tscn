@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://8fjm2s2t7nit"]
+[gd_scene load_steps=110 format=4 uid="uid://8fjm2s2t7nit"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_csvv7"]
 [ext_resource type="Texture2D" uid="uid://cv5quhfi1fnne" path="res://ph/placeholderheyes.png" id="2_onwyd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ihfc5l7350sl" path="res://loader/leveldata.gd" id="10_1pl0b"]
 [ext_resource type="PackedScene" uid="uid://diyci0q3ntefx" path="res://Enemies/attacks/ph2.tscn" id="10_calmy"]
 [ext_resource type="PackedScene" uid="uid://mwgx3mx6w5tu" path="res://Enemies/attacks/ph3.tscn" id="11_na5ou"]
+[ext_resource type="AudioStream" uid="uid://cu1q5tq5q85xh" path="res://music/Battle.wav" id="13_uh4q7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4n7m"]
 albedo_texture = ExtResource("3_m8xrc")
@@ -2683,7 +2684,7 @@ transform = Transform3D(0.233442, 0, 0.972371, 0, 1, 0, -0.972371, 0, 0.233442, 
 surface_material_override/0 = SubResource("StandardMaterial3D_hgqel")
 
 [node name="BoneAttachment3D" parent="kevin/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, -9.31323e-10, 0.998767, 0.843557, 1.63555, 0.0128214)
+transform = Transform3D(0.0245022, 0.999699, 0.00121772, -0.998466, 0.0245325, -0.0496219, -0.0496369, 2.56114e-09, 0.998767, 0.843557, 1.63555, 0.0128214)
 
 [node name="dpos" parent="." index="6"]
 transform = Transform3D(-0.370546, -0.366641, 0.853388, 0, 0.918793, 0.39474, -0.928814, 0.14627, -0.340455, -0.308464, 2.53051, -2.22314)
@@ -2713,5 +2714,10 @@ attacks = Dictionary[String, PackedScene]({
 winscene = SubResource("Resource_calmy")
 failscene = SubResource("Resource_1pl0b")
 reloadstring = "res://leveldata/dateph.tres"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="18"]
+stream = ExtResource("13_uh4q7")
+autoplay = true
+bus = &"Music"
 
 [editable path="kevin/Player/player"]

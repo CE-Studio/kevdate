@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dyn6snc68tcm1"]
+[gd_scene load_steps=15 format=4 uid="uid://dyn6snc68tcm1"]
 
 [ext_resource type="Texture2D" uid="uid://ccp8avgux12hs" path="res://sprites/Skybox2.png" id="1_v115i"]
 [ext_resource type="Texture2D" uid="uid://djhfuyu0p56bh" path="res://sprites/BGMountains.png" id="2_jglcl"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="7_vd23k"]
 [ext_resource type="PackedScene" uid="uid://dwknv4jpao8si" path="res://cam_trigger.tscn" id="7_x7rwe"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="9_x7rwe"]
+[ext_resource type="PackedScene" uid="uid://cc3un51mpgxv1" path="res://level_end.tscn" id="11_lf2mf"]
+[ext_resource type="AudioStream" uid="uid://bun7sh0bmtxqm" path="res://music/L2.wav" id="12_80cou"]
 
 [sub_resource type="GDScript" id="GDScript_mocdr"]
 resource_name = "L2SetRespawn"
@@ -447,3 +449,13 @@ scale = Vector2(3, 1)
 [node name="Ice12" parent="PlatformGroup" instance=ExtResource("6_jglcl")]
 position = Vector2(32256, 704)
 scale = Vector2(3, 1)
+
+[node name="LevelEnd" parent="." instance=ExtResource("11_lf2mf")]
+position = Vector2(36568, -464)
+scale = Vector2(11.0136, 45.1628)
+load_scene = "uid://dim3hr2icfcms"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_80cou")
+autoplay = true
+bus = &"Music"
