@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3i5vrb6lwd4c"
-path.s3tc="res://.godot/imported/Tileset.png-a8ffc1a35ac4cb02efe4276169135695.s3tc.ctex"
-path.etc2="res://.godot/imported/Tileset.png-a8ffc1a35ac4cb02efe4276169135695.etc2.ctex"
+uid="uid://b7kkp5urxccdr"
+path.s3tc="res://.godot/imported/EndingBG.png-335870d1225b4f5bfba59a28f6bc7ced.s3tc.ctex"
+path.etc2="res://.godot/imported/EndingBG.png-335870d1225b4f5bfba59a28f6bc7ced.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-a8ffc1a35ac4cb02efe4276169135695.s3tc.ctex", "res://.godot/imported/Tileset.png-a8ffc1a35ac4cb02efe4276169135695.etc2.ctex"]
+source_file="res://sprites/EndingBG.png"
+dest_files=["res://.godot/imported/EndingBG.png-335870d1225b4f5bfba59a28f6bc7ced.s3tc.ctex", "res://.godot/imported/EndingBG.png-335870d1225b4f5bfba59a28f6bc7ced.etc2.ctex"]
 
 [params]
 

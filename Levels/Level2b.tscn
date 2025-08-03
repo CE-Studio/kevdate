@@ -432,7 +432,7 @@ position = Vector2(28544, -3008)
 [node name="LevelEnd" parent="." instance=ExtResource("13_4d3pe")]
 position = Vector2(32448, -4560)
 scale = Vector2(11.0136, 45.1628)
-load_scene = "uid://dim3hr2icfcms"
+load_scene = "uid://rdmcerxi16b8"
 play_win_jingle = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

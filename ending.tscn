@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://2xfjm3eoddg2"]
+
+[ext_resource type="Texture2D" uid="uid://b7kkp5urxccdr" path="res://sprites/EndingBG.png" id="1_dmh3q"]
+[ext_resource type="Texture2D" uid="uid://b3i5vrb6lwd4c" path="res://sprites/Tileset.png" id="2_iggq8"]
+[ext_resource type="PackedScene" uid="uid://xv0yvw7qwsad" path="res://kevstandalone/Kevin34.tscn" id="3_iggq8"]
+
+[node name="Ending" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.91227, -0.0903603, 0.399497, 0, 0.975362, 0.220612, -0.409589, -0.201258, 0.889793, 1.304, 1.018, 0.686)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(5.35216, 0, 0.644206, 0, 3, 0, -1.17675, 0, 2.93002, -0.72, 3.045, -7.27)
+texture = ExtResource("1_dmh3q")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, -0.334695, -1.19209e-07, 1.38229)
+texture = ExtResource("2_iggq8")
+
+[node name="Player" parent="." instance=ExtResource("3_iggq8")]
+transform = Transform3D(0.919135, 0.079213, 0.385896, 0, 0.979575, -0.201078, -0.393942, 0.184818, 0.900362, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_top = 48.0
+offset_right = -61.0
+offset_bottom = 69.0
+grow_horizontal = 0
+text = "yoy did it"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -776.0
+offset_top = -240.0
+offset_right = -42.0
+offset_bottom = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Clarence112
+Game concept, character modeling, battle system
+
+EpsilonTheDerg
+2D art, level design, HUD design
+
+Lasagna Bones
+Game concept, music composition, chaotic brain activity"
+horizontal_alignment = 2
