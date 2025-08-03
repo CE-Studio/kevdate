@@ -256,7 +256,6 @@ position = Vector2(30784, -4160)
 position = Vector2(31040, -4160)
 
 [node name="TriggerGroup" type="Node2D" parent="."]
-visible = false
 
 [node name="CamTrigger" parent="TriggerGroup" instance=ExtResource("7_l8aiy")]
 position = Vector2(504.001, -432)
@@ -322,7 +321,6 @@ set_focus = true
 focus_point = Vector2(9928, -1704)
 
 [node name="EnemyGroup" type="Node2D" parent="."]
-visible = false
 
 [node name="EnemyBasic" parent="EnemyGroup" instance=ExtResource("8_mrlrm")]
 position = Vector2(6080, -448)
