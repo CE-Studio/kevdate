@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://yi7124yk37xw"]
+
+[ext_resource type="Script" uid="uid://dubpiduyosd41" path="res://scripts/title.gd" id="1_ubxjs"]
+[ext_resource type="Texture2D" uid="uid://ccsjlrjd0fgs5" path="res://sprites/CoverPic.png" id="1_wa0h2"]
+[ext_resource type="Texture2D" uid="uid://c3nc3ygfvo7ux" path="res://sprites/kevin.png" id="2_5k7ce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt7ni"]
+atlas = ExtResource("2_5k7ce")
+region = Rect2(0, 90, 115, 90)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ubxjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wa0h2")
+
+[node name="doofus" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_xt7ni")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -237.5
+offset_top = -96.0
+offset_right = 237.5
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Click literally anywhere to play idk
+or press any button idc"
+horizontal_alignment = 1
