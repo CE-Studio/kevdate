@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dybaync56l47p"]
+[gd_scene load_steps=16 format=4 uid="uid://dybaync56l47p"]
 
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_lkw24"]
 [ext_resource type="Texture2D" uid="uid://sit2r3vmxoga" path="res://sprites/BGHills.png" id="2_p5hn6"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://df8iklppw5lpo" path="res://Enemies/enemy_basic.tscn" id="7_nb8dl"]
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="8_nb8dl"]
 [ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="11_w58g5"]
+[ext_resource type="PackedScene" uid="uid://cc3un51mpgxv1" path="res://level_end.tscn" id="12_8glmb"]
+[ext_resource type="AudioStream" uid="uid://cxm43wpgrtc7" path="res://music/L1.wav" id="13_2bx7r"]
 
 [sub_resource type="GDScript" id="GDScript_nb8dl"]
 resource_name = "Set1BSpawn"
@@ -558,3 +560,14 @@ position = Vector2(45440, 2048)
 
 [node name="DeathBarrier" parent="." instance=ExtResource("11_w58g5")]
 position = Vector2(24184, 3320)
+
+[node name="LevelEnd" parent="." instance=ExtResource("12_8glmb")]
+position = Vector2(48592, -976)
+scale = Vector2(11.0136, 45.1628)
+load_scene = "uid://dskff87pnd1pn"
+play_win_jingle = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_2bx7r")
+autoplay = true
+bus = &"Music"

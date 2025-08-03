@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dujcapua5qt0i"]
+[gd_scene load_steps=24 format=4 uid="uid://dujcapua5qt0i"]
 
 [ext_resource type="TileSet" uid="uid://yyquk60tplgs" path="res://Tilemap.tres" id="1_3anf8"]
 [ext_resource type="Texture2D" uid="uid://cewxaf8nrv851" path="res://sprites/Skybox.png" id="1_xcayt"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="6_dl8mf"]
 [ext_resource type="PackedScene" uid="uid://i3i5a0317b4k" path="res://death_barrier.tscn" id="11_p5226"]
 [ext_resource type="Texture2D" uid="uid://cfqqdlyb1k0d" path="res://sprites/ph.png" id="12_tuji2"]
+[ext_resource type="PackedScene" uid="uid://cc3un51mpgxv1" path="res://level_end.tscn" id="13_f5cpa"]
+[ext_resource type="AudioStream" uid="uid://cxm43wpgrtc7" path="res://music/L1.wav" id="14_104vp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5226"]
 atlas = ExtResource("4_7fl83")
@@ -553,3 +555,13 @@ position = Vector2(29472, -3214)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ufevr")
 frame_progress = 0.789924
+
+[node name="LevelEnd" parent="." instance=ExtResource("13_f5cpa")]
+position = Vector2(29520, -3648)
+scale = Vector2(11.0136, 45.1628)
+load_scene = "uid://c7s2fdx7pn6px"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_104vp")
+autoplay = true
+bus = &"Music"
