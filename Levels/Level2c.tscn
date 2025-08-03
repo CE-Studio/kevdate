@@ -132,13 +132,13 @@ position = Vector2(6144, -832)
 position = Vector2(10496, -1280)
 
 [node name="Gear13" parent="GearGroup" instance=ExtResource("7_jhgnj")]
-position = Vector2(8960, -1536)
+position = Vector2(8960, -1664)
 
 [node name="Gear14" parent="GearGroup" instance=ExtResource("7_jhgnj")]
 position = Vector2(11136, -2176)
 
 [node name="Gear15" parent="GearGroup" instance=ExtResource("7_jhgnj")]
-position = Vector2(8448, -2432)
+position = Vector2(8704, -2560)
 
 [node name="Gear16" parent="GearGroup" instance=ExtResource("7_jhgnj")]
 position = Vector2(13248, -2176)
@@ -414,10 +414,10 @@ position = Vector2(7680, -448)
 position = Vector2(10496, -1088)
 
 [node name="Ice4" parent="PlatformGroup" instance=ExtResource("11_0m1o3")]
-position = Vector2(8960, -1344)
+position = Vector2(8960, -1472)
 
 [node name="Ice5" parent="PlatformGroup" instance=ExtResource("11_0m1o3")]
-position = Vector2(8448, -2240)
+position = Vector2(8704, -2368)
 
 [node name="Ice6" parent="PlatformGroup" instance=ExtResource("11_0m1o3")]
 position = Vector2(11136, -1984)
