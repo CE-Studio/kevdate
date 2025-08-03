@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://lrk1fyosnxh7"]
+[gd_scene load_steps=87 format=4 uid="uid://lrk1fyosnxh7"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ii05axyo31" path="res://kevstandalone/Scenes/datebattle.tscn" id="1_c4e0t"]
 [ext_resource type="Material" uid="uid://dobum8xwjbg7u" path="res://strike/strike_body.tres" id="2_3vv68"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bynq5nc45u4tp" path="res://strike/strike_eye_2.png" id="7_0be7p"]
 [ext_resource type="PackedScene" uid="uid://bdf678r5t7j0p" path="res://Enemies/attacks/strike0.tscn" id="8_uf0xm"]
 [ext_resource type="AudioStream" uid="uid://didmhxdy28mbi" path="res://music/mini/REPLACEME.mp3" id="8_uiwqq"]
+[ext_resource type="Resource" uid="uid://dtt2rq2jt4biu" path="res://leveldata/lvl2b.tres" id="10_qa316"]
+[ext_resource type="Resource" uid="uid://ep8evws2l5md" path="res://leveldata/lvl2c.tres" id="11_0be7p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10vf2"]
 resource_name = "Material"
@@ -4287,5 +4289,7 @@ attacks = Dictionary[String, PackedScene]({
 "!attk3": ExtResource("8_uf0xm"),
 "!attk4": ExtResource("8_uf0xm")
 })
+winscene = ExtResource("10_qa316")
+failscene = ExtResource("11_0be7p")
 
 [editable path="kevin/Player/player"]
