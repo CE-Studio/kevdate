@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dyn6snc68tcm1"]
+[gd_scene load_steps=19 format=4 uid="uid://dyn6snc68tcm1"]
 
 [ext_resource type="Texture2D" uid="uid://ccp8avgux12hs" path="res://sprites/Skybox2.png" id="1_v115i"]
 [ext_resource type="Texture2D" uid="uid://djhfuyu0p56bh" path="res://sprites/BGMountains.png" id="2_jglcl"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d2fsw8ubqatv0" path="res://Enemies/enemy_flying.tscn" id="9_x7rwe"]
 [ext_resource type="PackedScene" uid="uid://cc3un51mpgxv1" path="res://level_end.tscn" id="11_lf2mf"]
 [ext_resource type="AudioStream" uid="uid://bun7sh0bmtxqm" path="res://music/L2.wav" id="12_80cou"]
+[ext_resource type="Texture2D" uid="uid://cq020rc8tiv07" path="res://sprites/strike.png.png" id="13_xosfc"]
 
 [sub_resource type="GDScript" id="GDScript_mocdr"]
 resource_name = "L2SetRespawn"
@@ -24,6 +25,28 @@ func _ready() -> void:
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x7rwe"]
 normal = Vector2(1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbiy8"]
+atlas = ExtResource("13_xosfc")
+region = Rect2(0, 0, 460, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tweqo"]
+atlas = ExtResource("13_xosfc")
+region = Rect2(0, 360, 460, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbwna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbiy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tweqo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Level2" type="Node2D"]
 script = SubResource("GDScript_mocdr")
@@ -459,3 +482,10 @@ load_scene = "uid://dim3hr2icfcms"
 stream = ExtResource("12_80cou")
 autoplay = true
 bus = &"Music"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(36716, -25)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mbwna")
+autoplay = "default"
+frame_progress = 0.318086

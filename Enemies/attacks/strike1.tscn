@@ -1,0 +1,452 @@
+[gd_scene load_steps=8 format=3 uid="uid://bey6cah2ncujp"]
+
+[ext_resource type="Script" uid="uid://b20a0r1monjee" path="res://Enemies/attacks/attack.gd" id="1_hmbw3"]
+[ext_resource type="Texture2D" uid="uid://bx5cb4oexf5aa" path="res://sprites/trainattk_1.png" id="2_alea4"]
+[ext_resource type="Texture2D" uid="uid://wbdsxs31q7e5" path="res://sprites/trainattk_2.png" id="3_wsilo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hf3h"]
+size = Vector2(236, 29)
+
+[sub_resource type="Animation" id="Animation_f83yp"]
+resource_name = "new_animation"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Str1Sub1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3644, 41), Vector2(-24054, 41)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_q750o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Str1Sub1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3644, 41)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpnrj"]
+_data = {
+&"RESET": SubResource("Animation_q750o"),
+&"new_animation": SubResource("Animation_f83yp")
+}
+
+[node name="Strike1" type="Node2D"]
+script = ExtResource("1_hmbw3")
+metadata/_custom_type_script = "uid://b20a0r1monjee"
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Str1Sub1" type="Node2D" parent="."]
+texture_filter = 1
+position = Vector2(3644, 41)
+scale = Vector2(10.035, 10.035)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub2" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(246.637, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub2"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub2"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub2/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub3" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(491.978, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub3"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub3"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub3/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub4" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(739.113, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub4"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub4"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub4/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub5" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(984.155, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub5"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub5"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub5/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub6" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(1227.6, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub6"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub6"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub6/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub7" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(1474.44, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub7"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub7"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub7/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub8" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(1719.48, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub8"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub8"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub8/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="Str1Sub9" type="Node2D" parent="Str1Sub1"]
+texture_filter = 1
+position = Vector2(1962.93, 0)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-203, 0)
+texture = ExtResource("2_alea4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-169, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-135, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-101, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-67, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(-33, 0)
+texture = ExtResource("3_wsilo")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Str1Sub1/Str1Sub9"]
+position = Vector2(1, 0)
+texture = ExtResource("2_alea4")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Str1Sub1/Str1Sub9"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Str1Sub1/Str1Sub9/Area2D"]
+position = Vector2(-101, -1.5)
+shape = SubResource("RectangleShape2D_0hf3h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qpnrj")
+}
+autoplay = "new_animation"

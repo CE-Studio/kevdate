@@ -56,7 +56,7 @@ func addpoint() -> void:
 
 func rempoint() -> void:
 	$"../kevin/Player/afk".play()
-	$"../CanvasLayer".hp -= randf_range(3, 5)
+	$"../CanvasLayer".hp -= randf_range(2, 4)
 
 
 func procinp(a:Node3D) -> void:

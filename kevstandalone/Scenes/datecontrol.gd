@@ -78,8 +78,10 @@ func _ready() -> void:
 			$Control/VBoxContainer/PanelContainer.hide()
 			$Control/VBoxContainer/HBoxContainer.hide()
 			$"../arrows".show()
+			$MusicMain.stop()
 			$"../AnimationPlayer".play("tesht")
 			await $"../AnimationPlayer".animation_finished
+			$MusicMain.play()
 			$Control/VBoxContainer/PanelContainer.show()
 			$Control/VBoxContainer/HBoxContainer.show()
 			$"../arrows".hide()
@@ -186,7 +188,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if canhit:
 		kevheart.modulate.a = 0.5
-		hp -= randf_range(3, 5)
+		hp -= randf_range(5, 6)
 		canhit = false
 		$"../Timer".start()
 	
