@@ -28,7 +28,7 @@ func _ready() -> void:
 		%Subtitle.text = tr(&"levels.subtitles.unkown")
 		debug_neverload = true
 
-	if !debug_neverload:
+	if (!debug_neverload) and (!OS.has_feature("web")):
 		var err := ResourceLoader.load_threaded_request(next.scenepath)
 		print(err)
 		assert(err == OK)
